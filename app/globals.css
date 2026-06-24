@@ -1,0 +1,296 @@
+/* Tidey design tokens + Coming Soon page styles. Generated for Next.js export. */
+
+/* ===== tokens/fonts.css ===== */
+/* Tidey webfonts — loaded from Google Fonts.
+   SUBSTITUTION NOTE: the Tidey wordmark is a custom rounded logotype (see
+   assets/illustrations/wordmark-blue.png). For headlines we approximate that
+   playful, rounded feel with "Baloo 2"; UI/body uses "Nunito". If you have the
+   real brand typefaces, drop the files here and replace these @import lines. */
+
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400&display=swap');
+
+
+/* ===== tokens/colors.css ===== */
+/* ============================================================
+   TIDEY · COLORS
+   A bright, optimistic kids-app palette: vivid sky blue +
+   warm coin gold, soft pastel "job" tints, clean neutrals.
+   ============================================================ */
+:root {
+  /* ---- Brand blue (primary) ---- */
+  --blue-100: #E8F4FE;   /* tinted surfaces */
+  --blue-200: #C5E4FD;
+  --blue-300: #7FCBFF;
+  --blue-400: #4FB6FF;
+  --blue-500: #1E9FFF;   /* core brand blue */
+  --blue-600: #1683E6;   /* hover / pressed */
+  --blue-700: #0F6BC2;
+
+  /* Splash / hero gradient stops */
+  --sky-top: #15ABFF;
+  --sky-mid: #36B8FF;
+  --sky-bottom: #76D0FF;
+
+  /* ---- Coin gold / amber (rewards) ---- */
+  --gold-100: #FCF6E2;   /* streak / progress card cream */
+  --gold-200: #FBEBC2;
+  --gold-300: #FFC766;
+  --gold-400: #FFB23E;
+  --gold-500: #F5A623;   /* coin core */
+  --gold-600: #E08C0E;
+
+  /* Streak orange */
+  --orange-400: #FFA94D;
+  --orange-500: #FF9322;
+
+  /* ---- Job-card pastel tints + their on-color text ---- */
+  --tint-mint:  #DDF1EA;  --on-mint:  #1E6F73;
+  --tint-peach: #FBE7DA;  --on-peach: #9A6516;
+  --tint-leaf:  #E7F2D9;  --on-leaf:  #3F6B2E;
+  --tint-sky:   #DCEBF8;  --on-sky:   #235E8F;
+
+  /* ---- Neutrals / ink ---- */
+  --ink-900: #1A1D21;   /* headlines */
+  --ink-700: #3C4147;   /* strong body */
+  --ink-500: #6B7280;   /* secondary text */
+  --ink-400: #9AA0A8;   /* muted / placeholder */
+  --line:    #ECEEF1;   /* hairline borders */
+  --line-strong: #E0E3E8;
+
+  /* ---- Surfaces ---- */
+  --surface-page:   #FFFFFF;  /* app background */
+  --surface-subtle: #F6F7F9;  /* resting cards on white */
+  --surface-card:   #FFFFFF;  /* elevated cards */
+  --surface-blue:   #EAF4FD;  /* "almost done" info card */
+  --surface-cream:  #FBF7E6;  /* streak / household card */
+
+  /* ---- Semantic aliases ---- */
+  --color-primary:        var(--blue-500);
+  --color-primary-hover:  var(--blue-600);
+  --color-on-primary:     #FFFFFF;
+  --color-reward:         var(--gold-500);
+  --color-streak:         var(--orange-500);
+
+  --text-heading:   var(--ink-900);
+  --text-body:      var(--ink-700);
+  --text-secondary: var(--ink-500);
+  --text-muted:     var(--ink-400);
+  --text-link:      var(--blue-600);
+
+  --bg-app:         var(--surface-page);
+  --bg-elevated:    var(--surface-card);
+  --bg-recessed:    var(--surface-subtle);
+  --border-subtle:  var(--line);
+  --focus-ring:     var(--blue-400);
+}
+
+
+/* ===== tokens/typography.css ===== */
+/* ============================================================
+   TIDEY · TYPOGRAPHY
+   Display: "Baloo 2"  — playful, rounded, for big headlines.
+   UI/Body: "Nunito"   — friendly humanist sans for everything else.
+   ============================================================ */
+:root {
+  --font-display: "Baloo 2", "Nunito", system-ui, sans-serif;
+  --font-sans:    "Nunito", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  /* Weights */
+  --fw-regular: 400; /* @kind font */
+  --fw-semibold: 600; /* @kind font */
+  --fw-bold: 700; /* @kind font */
+  --fw-extrabold: 800; /* @kind font */
+  --fw-black: 900; /* @kind font */
+
+  /* Type scale (px-based, mobile-first app UI) */
+  --fs-display: 40px;   /* onboarding hero headlines */
+  --fs-h1: 30px;        /* screen titles: "Dashboard" */
+  --fs-h2: 24px;        /* card / section heads */
+  --fs-h3: 19px;        /* list item titles */
+  --fs-body: 16px;      /* body copy */
+  --fs-sm: 14px;        /* secondary text */
+  --fs-xs: 12px;        /* labels, captions */
+
+  --lh-tight: 1.08;     /* @kind other */
+  --lh-snug: 1.25;      /* @kind other */
+  --lh-normal: 1.5;     /* @kind other */
+
+  --ls-tight: -0.01em;  /* @kind other */
+  --ls-normal: 0;       /* @kind other */
+  --ls-wide: 0.04em;    /* @kind other */
+
+  /* Semantic roles */
+  --type-display: var(--fw-extrabold) var(--fs-display)/var(--lh-tight) var(--font-display);
+  --type-h1:      var(--fw-extrabold) var(--fs-h1)/var(--lh-snug) var(--font-sans);
+  --type-h2:      var(--fw-bold) var(--fs-h2)/var(--lh-snug) var(--font-sans);
+  --type-h3:      var(--fw-bold) var(--fs-h3)/var(--lh-snug) var(--font-sans);
+  --type-body:    var(--fw-regular) var(--fs-body)/var(--lh-normal) var(--font-sans);
+  --type-body-strong: var(--fw-bold) var(--fs-body)/var(--lh-normal) var(--font-sans);
+  --type-label:   var(--fw-bold) var(--fs-xs)/1.2 var(--font-sans);
+}
+
+
+/* ===== tokens/spacing.css ===== */
+/* ============================================================
+   TIDEY · SPACING & LAYOUT
+   4px base grid. Generous, breathable spacing — the app keeps
+   big margins and roomy cards.
+   ============================================================ */
+:root {
+  --space-0: 0;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+
+  /* Screen-edge padding for app surfaces */
+  --gutter: 20px;
+
+  /* Max content width for marketing / web surfaces */
+  --container: 1120px;
+}
+
+
+/* ===== tokens/effects.css ===== */
+/* ============================================================
+   TIDEY · EFFECTS — radii, shadows, motion
+   Everything is soft and pillowy: large corner radii, diffuse
+   low-opacity shadows, gentle spring-ish easing.
+   ============================================================ */
+:root {
+  /* ---- Corner radii ---- */
+  --radius-xs: 8px;
+  --radius-sm: 12px;
+  --radius-md: 16px;
+  --radius-lg: 22px;    /* cards */
+  --radius-xl: 28px;    /* big buttons / sheets */
+  --radius-2xl: 36px;
+  --radius-pill: 999px; /* coin pills, chips, CTA */
+
+  /* ---- Shadows (soft, blue-grey, never harsh black) ---- */
+  --shadow-xs: 0 1px 2px rgba(26, 29, 33, 0.05);
+  --shadow-sm: 0 4px 12px rgba(40, 70, 110, 0.06);
+  --shadow-md: 0 10px 24px rgba(40, 70, 110, 0.08);
+  --shadow-lg: 0 18px 40px rgba(40, 70, 110, 0.12);
+  --shadow-float: 0 24px 60px rgba(20, 90, 160, 0.18); /* hero / phone mockups */
+
+  /* Colored "glow" under the primary CTA */
+  --shadow-primary: 0 12px 24px rgba(30, 159, 255, 0.35);
+  --shadow-gold:    0 8px 18px rgba(245, 166, 35, 0.30);
+
+  /* ---- Motion ---- */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);       /* @kind other */
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1); /* @kind other */
+  --dur-fast: 140ms; /* @kind other */
+  --dur: 240ms;      /* @kind other */
+  --dur-slow: 440ms; /* @kind other */
+
+  /* Semantic */
+  --card-radius: var(--radius-lg);
+  --card-shadow: var(--shadow-sm);
+  --card-border: 1px solid var(--line);
+}
+
+
+/* ===== Coming Soon page ===== */
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--font-sans);color:var(--ink-900);background:#fff;overflow-x:hidden}
+img{display:block;max-width:100%}
+
+.hero{position:relative;background:radial-gradient(120% 80% at 80% -10%, #5BC8FF 0%, rgba(91,200,255,0) 55%),radial-gradient(110% 90% at 10% 0%, #2FB2FF 0%, rgba(47,178,255,0) 50%),linear-gradient(180deg, var(--sky-top) 0%, var(--sky-mid) 42%, #8DD4FF 88%, #DCF1FF 100%);overflow:hidden;padding:26px 24px 0}
+.hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:120px;background:linear-gradient(180deg, rgba(255,255,255,0), #fff);pointer-events:none}
+
+.bubble{position:absolute;border-radius:50%;background:rgba(255,255,255,.18);filter:blur(.5px);pointer-events:none;animation:floaty 9s ease-in-out infinite}
+@keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-26px)}}
+
+.nav{position:relative;z-index:3;max-width:var(--container);margin:0 auto;display:flex;align-items:center;justify-content:space-between}
+.nav .logo{height:34px;filter:drop-shadow(0 2px 6px rgba(11,80,150,.25))}
+.nav .navlink{display:flex;gap:10px;align-items:center}
+.pill-glass{display:inline-flex;align-items:center;gap:8px;padding:9px 16px;border-radius:var(--radius-pill);background:rgba(255,255,255,.22);border:1px solid rgba(255,255,255,.4);color:#fff;font-weight:800;font-size:13px;backdrop-filter:blur(6px)}
+
+.hero-inner{position:relative;z-index:2;max-width:920px;margin:0 auto;text-align:center;padding:46px 0 30px}
+.eyebrow{margin:0 auto}
+.eyebrow .dot{width:8px;height:8px;border-radius:50%;background:#9BE66B;box-shadow:0 0 0 4px rgba(155,230,107,.35)}
+h1.hero-title{font-family:var(--font-display);font-weight:800;color:#fff;font-size:clamp(40px,6.2vw,76px);line-height:1.02;letter-spacing:-.01em;margin:22px auto 0;max-width:14ch;text-shadow:0 6px 22px rgba(11,80,150,.28)}
+h1.hero-title .nudge{color:#FFE27A}
+.hero-sub{color:#EAF7FF;font-size:clamp(16px,2vw,20px);line-height:1.5;max-width:46ch;margin:18px auto 0;font-weight:600}
+
+.mascot-wrap{position:relative;width:230px;height:230px;margin:8px auto -6px}
+.mascot{width:100%;height:100%;object-fit:contain;-webkit-mask-image:radial-gradient(circle at 50% 46%, #000 56%, transparent 70%);mask-image:radial-gradient(circle at 50% 46%, #000 56%, transparent 70%);filter:drop-shadow(0 22px 30px rgba(11,80,150,.35));animation:bob 4.5s ease-in-out infinite}
+.mascot-glow{position:absolute;inset:14% 14% 22%;border-radius:50%;background:radial-gradient(circle,#BDEBFF 0%,rgba(189,235,255,0) 68%);filter:blur(6px);animation:pulse 4.5s ease-in-out infinite}
+@keyframes bob{0%,100%{transform:translateY(0) rotate(-4deg)}50%{transform:translateY(-16px) rotate(4deg)}}
+@keyframes pulse{0%,100%{opacity:.6;transform:scale(.95)}50%{opacity:1;transform:scale(1.05)}}
+
+.waitlist{margin:30px auto 0;max-width:480px}
+.form{display:flex;gap:8px;background:#fff;border-radius:var(--radius-pill);padding:7px 7px 7px 8px;box-shadow:var(--shadow-float)}
+.form input{flex:1;border:none;outline:none;background:transparent;font-family:var(--font-sans);font-size:16px;font-weight:600;color:var(--ink-900);padding:0 14px;min-width:0}
+.form input::placeholder{color:var(--ink-400)}
+.btn-cta{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:none;cursor:pointer;white-space:nowrap;padding:14px 24px;border-radius:var(--radius-pill);font-family:var(--font-sans);font-weight:800;font-size:16px;color:#fff;background:linear-gradient(180deg,var(--blue-400),var(--blue-500));box-shadow:var(--shadow-primary);transition:transform var(--dur-fast) var(--ease-spring),filter var(--dur) var(--ease-out)}
+.btn-cta:hover{filter:brightness(1.05)}
+.btn-cta:active{transform:scale(.95)}
+.form-note{margin:14px 0 0;color:#EAF7FF;font-size:14px;font-weight:700;display:flex;align-items:center;justify-content:center;gap:10px;opacity:.95}
+.avatars{display:flex}
+.avatars span{width:26px;height:26px;border-radius:50%;border:2px solid #fff;margin-left:-8px;background:#fff;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:800;color:var(--blue-600)}
+.avatars span:first-child{margin-left:0}
+.success{display:none;background:#fff;border-radius:var(--radius-pill);padding:16px 22px;box-shadow:var(--shadow-float);font-weight:800;color:var(--blue-600);align-items:center;justify-content:center;gap:10px}
+.success.show{display:flex;animation:pop .5s var(--ease-spring)}
+@keyframes pop{0%{transform:scale(.8);opacity:0}100%{transform:scale(1);opacity:1}}
+
+.phones{position:relative;z-index:2;max-width:var(--container);margin:30px auto 0;display:flex;justify-content:center;align-items:flex-end;gap:0;padding-bottom:46px}
+.phone{position:relative;width:198px;height:384px;border-radius:32px;overflow:hidden;border:7px solid #0e1116;background:#0e1116;box-shadow:var(--shadow-float);transition:transform .5s var(--ease-out)}
+.phone img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block}
+.phone.left{transform:rotate(-8deg) translateY(26px);z-index:1}
+.phone.right{transform:rotate(8deg) translateY(26px);z-index:1}
+.phone.center{transform:translateY(-10px) scale(1.05);z-index:2;margin:0 -22px}
+.phones:hover .phone.left{transform:rotate(-6deg) translateY(16px)}
+.phones:hover .phone.right{transform:rotate(6deg) translateY(16px)}
+.floaty-soft{animation:floaty 7s ease-in-out infinite}
+
+.coin{position:absolute;width:30px;height:30px;border-radius:50%;background:radial-gradient(circle at 35% 30%,var(--gold-300),var(--gold-500) 70%,var(--gold-600));box-shadow:inset 0 -2px 3px rgba(176,108,8,.5),0 4px 10px rgba(245,166,35,.4);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.9);font-family:var(--font-display);font-weight:800;font-size:14px;z-index:2;animation:driftup linear infinite;opacity:0}
+@keyframes driftup{0%{transform:translateY(40px) rotate(0);opacity:0}12%{opacity:1}88%{opacity:1}100%{transform:translateY(-160px) rotate(180deg);opacity:0}}
+
+@keyframes rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+
+.features{max-width:var(--container);margin:0 auto;padding:70px 24px 30px}
+.feat-head{text-align:center;max-width:30ch;margin:0 auto 44px}
+.feat-head h2{font-family:var(--font-display);font-weight:800;font-size:clamp(28px,4vw,42px);margin:0;color:var(--ink-900);letter-spacing:-.01em}
+.feat-head p{color:var(--ink-500);font-size:18px;font-weight:600;margin:12px 0 0}
+.feat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.feat{border-radius:var(--radius-xl);overflow:hidden;background:var(--surface-subtle);border:1px solid var(--line);transition:transform var(--dur) var(--ease-out),box-shadow var(--dur) var(--ease-out);opacity:0;transform:translateY(28px)}
+.feat.in{opacity:1;transform:none}
+.feat:hover{transform:translateY(-6px);box-shadow:var(--shadow-md)}
+.feat .art{height:200px;display:flex;align-items:flex-end;justify-content:center;overflow:hidden;background:linear-gradient(180deg,var(--sky-mid),#9CDBFF)}
+.feat .art img{width:100%;height:100%;object-fit:cover}
+.feat .art.jar{background:linear-gradient(180deg,#3FB6FF,#8FD6FF)}
+.feat .art.jar img{object-fit:contain;padding:14px}
+.feat .body{padding:22px 22px 26px}
+.feat .body h3{margin:0;font-size:21px;font-weight:800;color:var(--ink-900)}
+.feat .body p{margin:8px 0 0;color:var(--ink-500);font-size:15px;line-height:1.5;font-weight:600}
+
+footer{background:var(--blue-600);color:#fff;margin-top:50px;padding:40px 24px;text-align:center}
+footer .logo{height:30px;margin:0 auto 14px;opacity:.95}
+footer .links{display:flex;gap:22px;justify-content:center;margin:0 0 16px;font-weight:700;font-size:14px;flex-wrap:wrap}
+footer a{color:#DCF1FF;text-decoration:none}
+footer a:hover{color:#fff}
+footer .copy{color:#BFE4FF;font-size:13px;font-weight:600}
+
+@media (max-width:760px){
+  .phones{height:auto;flex-direction:row;transform:scale(.82);margin-top:18px}
+  .phone.center{margin:0 -20px}
+  .feat-grid{grid-template-columns:1fr}
+  .form{flex-direction:column;border-radius:var(--radius-xl);padding:10px}
+  .form input{padding:12px 14px;text-align:center}
+  .btn-cta{width:100%}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important}
+  .feat{opacity:1;transform:none}
+}
