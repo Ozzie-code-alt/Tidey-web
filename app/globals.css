@@ -293,6 +293,7 @@ h1.hero-title .nudge{color:#FFE27A}
 
 .legal-inner h2{font-family:var(--font-sans);font-weight:800;font-size:22px;color:var(--ink-900);letter-spacing:-.01em;line-height:1.3;margin:40px 0 0;scroll-margin-top:24px}
 .legal-inner h2 .num{color:var(--blue-500);margin-right:8px}
+.legal-inner h3{font-family:var(--font-sans);font-weight:800;font-size:17px;color:var(--ink-900);letter-spacing:-.01em;line-height:1.3;margin:26px 0 0;scroll-margin-top:24px}
 .legal-inner p{color:var(--ink-700);font-size:16px;line-height:1.7;font-weight:500;margin:12px 0 0}
 .legal-inner ul{list-style:none;margin:14px 0 0;padding:0;display:flex;flex-direction:column;gap:11px}
 .legal-inner ul li{position:relative;color:var(--ink-700);font-size:16px;line-height:1.6;font-weight:500;padding-left:26px}
