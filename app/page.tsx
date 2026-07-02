@@ -2,6 +2,7 @@
 
 /* eslint-disable @next/next/no-img-element */
 import { useEffect, useRef, useState } from "react";
+import SiteFooter from "./components/SiteFooter";
 
 export default function Home() {
   const [submitted, setSubmitted] = useState(false);
@@ -259,19 +260,7 @@ export default function Home() {
         </div>
       </section>
 
-      <footer>
-        <img
-          className="logo"
-          src="/assets/illustrations/wordmark-white.png"
-          alt="tidey"
-        />
-        <div className="links">
-          <a href="#">Privacy</a>
-          <a href="#">Terms</a>
-          <a href="mailto:hello@tidey.app">Contact</a>
-        </div>
-        <div className="copy">© 2026 Tidey. Made for families. 💙</div>
-      </footer>
+      <SiteFooter />
     </>
   );
 }
