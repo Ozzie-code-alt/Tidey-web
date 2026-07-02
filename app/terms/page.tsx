@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 export default function TermsPage() {
   return (
-    <LegalLayout title="Terms of Service" updated="July 1, 2026">
+    <LegalLayout title="Terms of Service" updated="July 3, 2026">
       <p className="legal-lead">
         Welcome to Tidey! Please read these Terms of Service (“Terms”, “Terms of
         Service”) carefully before using the Tidey mobile application (the
