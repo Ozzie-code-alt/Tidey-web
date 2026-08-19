@@ -1,0 +1,165 @@
+"use client";
+
+import { useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination, A11y } from "swiper/modules";
+import type { Swiper as SwiperClass } from "swiper";
+import "swiper/css";
+import "swiper/css/pagination";
+
+const testimonials = [
+  {
+    id: "priya",
+    quote:
+      "My eight-year-old asked if he could do the dishes. I genuinely had to sit down for a moment.",
+    name: "Priya S.",
+    detail: "Parent of two, Manchester",
+    initials: "PS",
+    tint: "var(--tint-sky)",
+    ink: "var(--on-sky)",
+  },
+  {
+    id: "marcus",
+    quote:
+      "The coins did what six months of reminder charts couldn't. They can see the reward stacking up.",
+    name: "Marcus T.",
+    detail: "Parent of three, Leeds",
+    initials: "MT",
+    tint: "var(--tint-mint)",
+    ink: "var(--on-mint)",
+  },
+  {
+    id: "hannah",
+    quote:
+      "We stopped arguing about whose turn it was. The app just says. That alone was worth it.",
+    name: "Hannah W.",
+    detail: "Parent of two, Bristol",
+    initials: "HW",
+    tint: "var(--tint-peach)",
+    ink: "var(--on-peach)",
+  },
+  {
+    id: "omar",
+    quote:
+      "My daughter saved up for three weeks for a cinema trip. She learned more about money than I taught her all year.",
+    name: "Omar A.",
+    detail: "Parent of one, Glasgow",
+    initials: "OA",
+    tint: "var(--tint-leaf)",
+    ink: "var(--on-leaf)",
+  },
+];
+
+export default function TestimonialSwiper() {
+  const [swiper, setSwiper] = useState<SwiperClass | null>(null);
+  const [isBeginning, setIsBeginning] = useState(true);
+  const [isEnd, setIsEnd] = useState(false);
+
+  const sync = (s: SwiperClass) => {
+    setIsBeginning(s.isBeginning);
+    setIsEnd(s.isEnd);
+  };
+
+  return (
+    <section className="bg-[var(--surface-subtle)] py-16 md:py-20">
+      <div className="mx-auto mb-10 flex max-w-[1120px] flex-col items-center gap-6 px-6 md:flex-row md:items-end md:justify-between">
+        <div className="text-center md:text-left">
+          <h2 className="font-display text-[clamp(26px,4vw,38px)] font-extrabold leading-[1.1] text-ink">
+            Parents are talking
+          </h2>
+          <p className="mt-3 max-w-[40ch] text-lg font-semibold text-ink-soft">
+            Early access families, in their own words.
+          </p>
+        </div>
+
+        <div className="flex shrink-0 gap-3">
+          <button
+            type="button"
+            onClick={() => swiper?.slidePrev()}
+            disabled={isBeginning}
+            aria-label="Previous testimonial"
+            className="flex h-12 w-12 items-center justify-center rounded-full border border-hairline bg-white text-[var(--blue-600)] shadow-[var(--shadow-sm)] transition duration-200 hover:-translate-y-0.5 hover:border-[var(--blue-300)] hover:shadow-[var(--shadow-md)] active:scale-95 disabled:cursor-not-allowed disabled:opacity-35 disabled:hover:translate-y-0 disabled:hover:shadow-[var(--shadow-sm)]"
+          >
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden>
+              <path
+                d="M15 5l-7 7 7 7"
+                stroke="currentColor"
+                strokeWidth="2.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </button>
+
+          <button
+            type="button"
+            onClick={() => swiper?.slideNext()}
+            disabled={isEnd}
+            aria-label="Next testimonial"
+            className="flex h-12 w-12 items-center justify-center rounded-full border border-hairline bg-white text-[var(--blue-600)] shadow-[var(--shadow-sm)] transition duration-200 hover:-translate-y-0.5 hover:border-[var(--blue-300)] hover:shadow-[var(--shadow-md)] active:scale-95 disabled:cursor-not-allowed disabled:opacity-35 disabled:hover:translate-y-0 disabled:hover:shadow-[var(--shadow-sm)]"
+          >
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden>
+              <path
+                d="M9 5l7 7-7 7"
+                stroke="currentColor"
+                strokeWidth="2.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <div className="team-swiper mx-auto max-w-[1120px] px-6">
+        <Swiper
+          modules={[Pagination, A11y]}
+          spaceBetween={20}
+          slidesPerView={1.1}
+          onSwiper={(s) => {
+            setSwiper(s);
+            sync(s);
+          }}
+          onSlideChange={sync}
+          onResize={sync}
+          pagination={{ clickable: true }}
+          breakpoints={{
+            600: { slidesPerView: 2 },
+            900: { slidesPerView: 3 },
+          }}
+        >
+          {testimonials.map((item) => (
+            <SwiperSlide key={item.id} className="!h-auto pb-14">
+              <figure className="flex h-full flex-col rounded-card border border-hairline bg-white p-7 shadow-[var(--shadow-sm)]">
+                <span
+                  className="font-display text-5xl leading-none text-[var(--blue-300)]"
+                  aria-hidden
+                >
+                  &ldquo;
+                </span>
+                <blockquote className="mt-2 flex-1 text-lg font-semibold leading-relaxed text-[var(--ink-700)]">
+                  {item.quote}
+                </blockquote>
+                <figcaption className="mt-6 flex items-center gap-3 border-t border-hairline pt-5">
+                  <span
+                    className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full text-sm font-extrabold"
+                    style={{ background: item.tint, color: item.ink }}
+                    aria-hidden
+                  >
+                    {item.initials}
+                  </span>
+                  <span>
+                    <span className="block font-extrabold text-ink">{item.name}</span>
+                    <span className="block text-sm font-semibold text-ink-soft">
+                      {item.detail}
+                    </span>
+                  </span>
+                </figcaption>
+              </figure>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
+    </section>
+  );
+}

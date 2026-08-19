@@ -2,7 +2,6 @@
 
 /* eslint-disable @next/next/no-img-element */
 import { useEffect, useRef, useState } from "react";
-import SiteFooter from "./components/SiteFooter";
 
 export default function Home() {
   const [submitted, setSubmitted] = useState(false);
@@ -110,7 +109,7 @@ export default function Home() {
           t
         </div>
 
-        <nav className="nav">
+        {/* <nav className="nav">
           <img
             className="logo"
             src="/assets/illustrations/wordmark-white.png"
@@ -119,7 +118,7 @@ export default function Home() {
           <div className="navlink">
             <span className="pill-glass">📨 hello@tidey.app</span>
           </div>
-        </nav>
+        </nav> */}
 
         <div className="hero-inner">
           <span className="eyebrow pill-glass">
@@ -259,8 +258,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      <SiteFooter />
     </>
   );
 }
