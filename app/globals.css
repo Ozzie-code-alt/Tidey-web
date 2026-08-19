@@ -8,7 +8,7 @@
    real brand typefaces, drop the files here and replace these @import lines. */
 
 @import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400&display=swap');
-
+@import "tailwindcss";
 
 /* ===== tokens/colors.css ===== */
 /* ============================================================
@@ -332,4 +332,30 @@ footer .copy{color:#BFE4FF;font-size:13px;font-weight:600}
 @media (prefers-reduced-motion:reduce){
   *{animation:none!important}
   .feat{opacity:1;transform:none}
+}
+
+/* Start Swiper */
+.testimonial-swiper {
+  --swiper-theme-color: var(--blue-500);
+  --swiper-navigation-size: 22px;
+  --swiper-pagination-bullet-inactive-color: var(--blue-300);
+  --swiper-pagination-bullet-inactive-opacity: 0.5;
+}
+/* End Swiper */
+
+@theme inline {
+  --color-brand: var(--blue-500);
+  --color-brand-hover: var(--blue-600);
+  --color-brand-soft: var(--blue-100);
+  --color-gold: var(--gold-500);
+  --color-ink: var(--ink-900);
+  --color-ink-body: var(--ink-700);
+  --color-ink-soft: var(--ink-500);
+  --color-cream: var(--surface-cream);
+  --color-hairline: var(--line);
+
+  --radius-card: 22px;
+  --radius-pill: 999px;
+
+  --font-display: "Baloo 2", "Nunito", system-ui, sans-serif;
 }
