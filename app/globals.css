@@ -2,12 +2,9 @@
 
 /* ===== tokens/fonts.css ===== */
 /* Tidey webfonts — loaded from Google Fonts.
-   SUBSTITUTION NOTE: the Tidey wordmark is a custom rounded logotype (see
-   assets/illustrations/wordmark-blue.png). For headlines we approximate that
-   playful, rounded feel with "Baloo 2"; UI/body uses "Nunito". If you have the
-   real brand typefaces, drop the files here and replace these @import lines. */
+   Brand typeface: "Plus Jakarta Sans" for display and UI/body alike. */
 
-@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
 @import "tailwindcss";
 
 /* ===== tokens/colors.css ===== */
@@ -83,7 +80,7 @@
   --border-subtle:  var(--line);
   --focus-ring:     var(--blue-400);
 
-  --header-h: 72px;
+  --header-h: 91px;
   --header-fade: linear-gradient(
   180deg,
   rgba(22, 131, 230, 0.94) 0%,
@@ -100,8 +97,8 @@
    UI/Body: "Nunito"   — friendly humanist sans for everything else.
    ============================================================ */
 :root {
-  --font-display: "Baloo 2", "Nunito", system-ui, sans-serif;
-  --font-sans:    "Nunito", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-display: "Plus Jakarta Sans", system-ui, sans-serif;
+  --font-sans:    "Plus Jakarta Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
 
   /* Weights */
   --fw-regular: 400; /* @kind font */
@@ -322,11 +319,11 @@ h1.hero-title .nudge{color:#FFE27A}
   .legal-inner h2{font-size:20px}
 }
 
-footer{background:var(--blue-600);color:#fff;margin-top:50px;padding:40px 24px;text-align:center}
-footer .logo{height:30px;margin:0 auto 14px;opacity:.95}
+footer{background:transparent;color:inherit;margin-top:0;padding:0;text-align:left}
+footer .logo{height:auto;margin:0;opacity:1}
 footer .links{display:flex;gap:22px;justify-content:center;margin:0 0 16px;font-weight:700;font-size:14px;flex-wrap:wrap}
-footer a{color:#DCF1FF;text-decoration:none}
-footer a:hover{color:#fff}
+footer a{color:inherit;text-decoration:none}
+footer a:hover{color:#0088FA}
 footer .copy{color:#BFE4FF;font-size:13px;font-weight:600}
 
 @media (max-width:760px){
@@ -365,5 +362,5 @@ footer .copy{color:#BFE4FF;font-size:13px;font-weight:600}
   --radius-card: 22px;
   --radius-pill: 999px;
 
-  --font-display: "Baloo 2", "Nunito", system-ui, sans-serif;
+  --font-display: "Plus Jakarta Sans", system-ui, sans-serif;
 }
