@@ -33,29 +33,29 @@ const columns = [navColumn, contactColumn, followColumn];
 
 export default function SiteFooter() {
   return (
-    <footer className="mx-auto mt-auto w-full max-w-[1940px] bg-white px-6 pb-10 pt-20 lg:px-[162px] lg:pb-[100px]">
-      <div className="flex flex-col items-start justify-between gap-12 lg:flex-row">
+    <footer className="mx-auto mt-auto w-full max-w-[1694px] bg-white px-5 py-10 lg:px-10 lg:py-[100px]">
+      <div className="flex flex-col items-center gap-5 lg:flex-row lg:items-start lg:justify-between">
         <Link
           href="/"
           aria-label="Tidey home"
-          className="inline-flex max-w-[381px] shrink-0 justify-center lg:justify-start"
+          className="inline-flex max-w-[381px] shrink-0 justify-center p-[26px]"
         >
           <Image
             src="/assets/illustrations/tidey-logo-blue.svg"
             alt="Tidey"
             width={330}
             height={163}
-            className="w-[220px] max-w-full lg:w-[330px]"
+            className="h-auto w-[252px] max-w-full lg:w-[330px]"
           />
         </Link>
 
-        <div className="flex flex-1 flex-row justify-between gap-6 lg:gap-[99px]">
+        <div className="flex w-full flex-row justify-between gap-[23px] lg:w-auto lg:gap-[99px]">
           {columns.map((col) => (
             <div
               key={col.title}
-              className="flex flex-col items-start justify-center gap-[26px] lg:items-start"
+              className="flex flex-col items-start justify-start gap-[26px] lg:items-start"
             >
-              <span className="text-[16px] font-bold leading-[150%] text-[#232323] lg:text-[20px]">
+              <span className="text-[14px] font-bold leading-[150%] text-[#232323] lg:text-[20px]">
                 {col.title}
               </span>
               {col.links.map((link) =>

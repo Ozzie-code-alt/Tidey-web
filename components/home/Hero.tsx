@@ -27,7 +27,7 @@ export default function Hero() {
         fill
         priority
         sizes="100vw"
-        className="absolute inset-0 hidden h-full w-full object-cover object-center hidden lg:block"
+        className="absolute inset-0 !hidden h-full w-full object-cover object-center lg:!block"
       />
 
       {/* Buttons pinned to the bottom. Stacked (full-width) on mobile,

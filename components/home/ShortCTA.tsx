@@ -1,19 +1,21 @@
-/* eslint-disable @next/next/no-img-element */
 import { StoreButton } from "@/components/StoreButtons";
 
-// Section 6 — short closing CTA.
 export default function ShortCTA() {
   return (
-    <section className="bg-white">
-      <div className="mx-auto max-w-[1740px] px-4 pb-6 pt-10 lg:px-10 lg:py-[100px]">
-        <div className="flex flex-col items-center justify-center gap-8 rounded-[40px] px-6 py-10 text-center lg:flex-row lg:justify-between lg:gap-10 lg:rounded-[40px] lg:px-20 lg:py-14">
-          <h2 className="max-w-[520px] text-[24px] font-semibold leading-[30px] tracking-[-0.005em] text-[#00BAFA] lg:text-[36px] lg:leading-[45px]">
-            Download Tidey now on iOS
-          </h2>
-          <div className="flex flex-col items-center gap-[14px] sm:flex-row sm:gap-10">
-            <StoreButton platform="iphone" />
-            <StoreButton platform="android" />
-          </div>
+    <section className="bg-white px-5 py-10 lg:px-10 xl:px-20 2xl:px-[162px] 2xl:py-[60px]">
+      <div className="mx-auto flex w-full max-w-[1738px] flex-col items-center gap-[26px] rounded-[40px] px-5 py-5 lg:flex-row lg:justify-center lg:gap-[60px] lg:px-10 xl:px-20 2xl:px-[100px]">
+        <h2 className="max-w-[304px] text-center text-[24px] font-semibold leading-[30px] tracking-[-0.005em] text-[#00BAFA] lg:max-w-[478px] lg:text-[36px] lg:leading-[45px]">
+          Download Tidey now on iOS
+        </h2>
+        <div className="flex w-full max-w-[350px] flex-col gap-[14px] lg:w-auto lg:max-w-none lg:flex-row lg:gap-10">
+          <StoreButton
+            platform="iphone"
+            className="h-[63px] w-full justify-center [&_span]:text-[18px] lg:w-[340px] 2xl:w-[400px]"
+          />
+          <StoreButton
+            platform="android"
+            className="h-[63px] w-full justify-center [&_span]:text-[18px] lg:w-[340px] 2xl:w-[400px]"
+          />
         </div>
       </div>
     </section>

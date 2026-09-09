@@ -3,7 +3,11 @@ import Image from "next/image";
 // Section 4 — three age-role cards ("Built for every age").
 // People: /assets/illustrations/junior-explorer.png (sky)
 //         /assets/illustrations/pro-entrepreneur.png (sun / Pilot)
-//         /assets/illustrations/teen-strategist.png (forest / Teen Strategist)
+//         /assets/illustrations/teen-strategist.png (forest / Teen Strategist, pre-flipped)
+//
+// Layout: each card is a 2-col grid (text = remaining space, image = its own
+// size). The image bleeds flush into the card's rounded corner via overflow
+// hidden + negative margins — no position:absolute anywhere.
 type Role = {
   title: string;
   tag: string;
@@ -13,7 +17,7 @@ type Role = {
   imgH: number;
   alt: string;
   bg: string;
-  imgLeft: string; // override positioning of the person cut-out
+  imgCls: string; // responsive height for the person cut-out (width follows aspect ratio)
 };
 
 const roles: Role[] = [
@@ -26,7 +30,7 @@ const roles: Role[] = [
     imgH: 337,
     alt: "Junior Explorer",
     bg: "bg-[linear-gradient(180deg,#54A8FF_0%,#97CAFF_100%)]",
-    imgLeft: "lg:left-[56%] lg:top-[-40px]",
+    imgCls: "h-[197px] lg:h-[337px]",
   },
   {
     title: "Pilot",
@@ -37,7 +41,7 @@ const roles: Role[] = [
     imgH: 330,
     alt: "Pilot",
     bg: "bg-[linear-gradient(180deg,#EFB110_0%,#FFCB44_100%)]",
-    imgLeft: "lg:left-[42%] lg:top-[-30px]",
+    imgCls: "h-[208px] lg:h-[330px]",
   },
   {
     title: "Teen Strategist",
@@ -48,43 +52,44 @@ const roles: Role[] = [
     imgH: 342,
     alt: "Teen Strategist",
     bg: "bg-[linear-gradient(180deg,#98CA7D_0%,#A9D791_100%)]",
-    imgLeft: "lg:left-[60%] lg:top-[-40px]",
+    imgCls: "h-[194px] lg:h-[342px]",
   },
 ];
 
 export default function RoleCards() {
   return (
     <section className="bg-white">
-      <div className="mx-auto max-w-[1740px] px-4 py-10 lg:px-10 lg:py-[100px]">
-        <h2 className="text-center text-[30px] font-bold leading-[38px] text-[#232323] lg:text-[70px] lg:leading-[88px] lg:tracking-[-1.66px]">
+      <div className="mx-auto max-w-[1820px] px-4 py-10 lg:px-10 lg:py-[100px]">
+        <h2 className="text-center text-[30px] font-bold leading-[38px] tracking-[-1.66px] text-[#232323] lg:text-[70px] lg:leading-[88px]">
           Built for every age
         </h2>
 
-        <div className="mt-8 grid grid-cols-1 gap-6 lg:mt-20 lg:grid-cols-3 lg:gap-[26px]">
+        <div className="mt-8 grid grid-cols-1 gap-4 lg:mt-20 lg:grid-cols-3 lg:gap-[26px]">
           {roles.map((r) => (
             <article
               key={r.title}
-              className={`relative flex min-h-[380px] flex-col justify-end overflow-hidden rounded-[30px] p-8 shadow-[inset_0px_0px_20px_#FFFFFF] lg:h-[380px] ${r.bg}`}
+              className={`grid grid-cols-[1fr_auto] items-stretch gap-0 min-h-[213px] rounded-[30px] py-6 pl-6 shadow-[inset_0px_0px_20px_#FFFFFF] lg:py-8 lg:pl-8 ${r.bg}`}
             >
-              {/* text block sits above a soft base, person cut-out overlaps top */}
-              <div className="relative z-0 max-w-[300px]">
-                <span className="block text-[40px] font-bold leading-[50px] text-white lg:text-[40px] lg:leading-[50px]">
+              {/* text takes the remaining column width */}
+              <div className="flex flex-col self-center -mr-12 lg-mr-7">
+                <span className="text-[32px] font-bold leading-[40px] text-white lg:text-[40px] lg:leading-[50px]">
                   {r.title}
                 </span>
-                <span className="mt-4 block w-fit max-w-full rounded-[37px] bg-white px-[18px] py-1 text-[14px] font-bold uppercase leading-[18px] tracking-[0.05px] text-[#B8B8B8]">
+                <span className="mt-3 inline-block w-fit rounded-[37px] bg-white px-[12px] py-1 text-[12px] font-bold uppercase leading-[15px] tracking-[0.05px] text-[#B8B8B8] lg:px-[18px]">
                   {r.tag}
                 </span>
-                <p className="mt-4 text-[14px] font-semibold leading-[24px] text-white lg:text-[18px]">
+                <p className="mt-[18px] text-[14px] font-semibold leading-[24px] text-white lg:text-[18px] lg:leading-[27px] max-w-5/6">
                   {r.desc}
                 </p>
               </div>
 
+              {/* image keeps its own size and bleeds flush into the corner */}
               <Image
                 src={r.img}
                 alt={r.alt}
                 width={r.imgW}
                 height={r.imgH}
-                className={`pointer-events-none absolute right-0 bottom-0 z-10 h-[88%] w-auto object-contain ${r.imgLeft}`}
+                className={`pointer-events-none -mt-16 -mb-6 w-auto self-end object-contain lg:-mt-24 lg:-mb-8 ${r.imgCls}`}
               />
             </article>
           ))}
