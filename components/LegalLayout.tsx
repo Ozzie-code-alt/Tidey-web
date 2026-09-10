@@ -1,5 +1,4 @@
 /* eslint-disable @next/next/no-img-element */
-import SiteFooter from "./SiteFooter";
 
 // Branded shell for legal/content pages (Privacy, Terms): slim sky header
 // with the wordmark + a way home, a readable content column, and the shared
@@ -38,8 +37,6 @@ export default function LegalLayout({
           {children}
         </article>
       </main>
-
-      <SiteFooter />
     </>
   );
 }
