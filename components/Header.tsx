@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import Image from "next/image";
 import MobileDrawer from "./MobileDrawer";
 
@@ -13,6 +14,8 @@ const links = [
 export default function Header() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
+  const forceFade = pathname === "/privacy" || pathname === "/terms";
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -28,7 +31,7 @@ export default function Header() {
         className="pointer-events-none absolute inset-x-0 top-0 h-[calc(var(--header-h)+20px)] transition-opacity duration-300"
         style={{
           background: "var(--header-fade)",
-          opacity: scrolled ? 1 : 0,
+          opacity: forceFade || scrolled ? 1 : 0,
         }}
       />
       <div className="relative mx-auto flex h-full max-w-[1940px] items-center justify-between md:px-7.5 lg:px-[60px]">
