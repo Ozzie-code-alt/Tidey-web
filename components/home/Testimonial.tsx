@@ -68,7 +68,7 @@ export default function Testimonial() {
     <section className="bg-white overflow-hidden">
       <div className="mx-auto grid max-w-[1820px] grid-cols-1 items-start gap-8 px-5 py-10 lg:gap-5 lg:px-10 lg:py-35 xl:grid-cols-2">
         {/* Left — heading + copy + single store CTA */}
-        <div className="w-full lg:px-20 lg:py-[69px]">
+        <div className="w-full lg:pl-20 lg:pr-12 lg:py-[69px]">
           <h2 className="text-[28px] font-bold leading-[35px] tracking-[-0.5px] text-[#232323] lg:text-[60px] lg:leading-19 lg:tracking-[-1.66px]">
             Make everyday routines work better for your family
           </h2>
@@ -81,7 +81,7 @@ export default function Testimonial() {
         </div>
 
         {/* Right — quote-card swiper */}
-        <div className="w-full lg:max-w-[742px] m-auto xl:mr-auto">
+        <div className="w-full lg:max-w-[763px] m-auto xl:mr-auto">
           <div className="lg:flex lg:items-center lg:gap-7">
             <div className="min-w-0 lg:flex-1">
               <Swiper
