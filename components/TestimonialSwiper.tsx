@@ -61,13 +61,13 @@ export default function TestimonialSwiper() {
   };
 
   return (
-    <section className="bg-[var(--surface-subtle)] py-16 md:py-20">
-      <div className="mx-auto mb-10 flex max-w-[1120px] flex-col items-center gap-6 px-6 md:flex-row md:items-end md:justify-between">
+    <section className="bg-white px-5 py-10 lg:px-10 lg:py-[100px]">
+      <div className="mx-auto mb-8 flex max-w-[1738px] flex-col items-center gap-6 md:flex-row md:items-end md:justify-between lg:mb-[60px]">
         <div className="text-center md:text-left">
-          <h2 className="font-display text-[clamp(26px,4vw,38px)] font-extrabold leading-[1.1] text-ink">
+          <h2 className="text-[32px] font-bold leading-[40px] tracking-[-0.5px] text-[#232323] lg:text-[52px] lg:leading-[66px] lg:tracking-[-1.66px]">
             Parents are talking
           </h2>
-          <p className="mt-3 max-w-[40ch] text-lg font-semibold text-ink-soft">
+          <p className="mt-3 max-w-[40ch] text-[16px] font-normal leading-[160%] text-[#878787] lg:text-[20px]">
             Early access families, in their own words.
           </p>
         </div>
@@ -78,7 +78,7 @@ export default function TestimonialSwiper() {
             onClick={() => swiper?.slidePrev()}
             disabled={isBeginning}
             aria-label="Previous testimonial"
-            className="flex h-12 w-12 items-center justify-center rounded-full border border-hairline bg-white text-[var(--blue-600)] shadow-[var(--shadow-sm)] transition duration-200 hover:-translate-y-0.5 hover:border-[var(--blue-300)] hover:shadow-[var(--shadow-md)] active:scale-95 disabled:cursor-not-allowed disabled:opacity-35 disabled:hover:translate-y-0 disabled:hover:shadow-[var(--shadow-sm)]"
+            className="flex h-12 w-12 items-center justify-center rounded-full bg-[#FBFBFB] text-[#232323] shadow-[-7px_8px_26px_#EBEBEB] transition duration-200 hover:-translate-y-0.5 active:scale-95 disabled:cursor-not-allowed disabled:opacity-35 disabled:hover:translate-y-0"
           >
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden>
               <path
@@ -96,7 +96,7 @@ export default function TestimonialSwiper() {
             onClick={() => swiper?.slideNext()}
             disabled={isEnd}
             aria-label="Next testimonial"
-            className="flex h-12 w-12 items-center justify-center rounded-full border border-hairline bg-white text-[var(--blue-600)] shadow-[var(--shadow-sm)] transition duration-200 hover:-translate-y-0.5 hover:border-[var(--blue-300)] hover:shadow-[var(--shadow-md)] active:scale-95 disabled:cursor-not-allowed disabled:opacity-35 disabled:hover:translate-y-0 disabled:hover:shadow-[var(--shadow-sm)]"
+            className="flex h-12 w-12 items-center justify-center rounded-full bg-[#FBFBFB] text-[#232323] shadow-[-7px_8px_26px_#EBEBEB] transition duration-200 hover:-translate-y-0.5 active:scale-95 disabled:cursor-not-allowed disabled:opacity-35 disabled:hover:translate-y-0"
           >
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden>
               <path
@@ -111,7 +111,7 @@ export default function TestimonialSwiper() {
         </div>
       </div>
 
-      <div className="team-swiper mx-auto max-w-[1120px] px-6">
+      <div className="team-swiper mx-auto max-w-[1738px]">
         <Swiper
           modules={[Pagination, A11y]}
           spaceBetween={20}
@@ -130,27 +130,27 @@ export default function TestimonialSwiper() {
         >
           {testimonials.map((item) => (
             <SwiperSlide key={item.id} className="!h-auto pb-14">
-              <figure className="flex h-full flex-col rounded-card border border-hairline bg-white p-7 shadow-[var(--shadow-sm)]">
+              <figure className="flex h-full flex-col rounded-[30px] bg-[#FBFBFB] p-6 shadow-[0_18px_36px_#EFEFEF] lg:p-10">
                 <span
-                  className="font-display text-5xl leading-none text-[var(--blue-300)]"
+                  className="text-5xl font-bold leading-none text-[#00BAFA]"
                   aria-hidden
                 >
                   &ldquo;
                 </span>
-                <blockquote className="mt-2 flex-1 text-lg font-semibold leading-relaxed text-[var(--ink-700)]">
+                <blockquote className="mt-2 flex-1 text-[16px] font-normal leading-[160%] text-[#232323] lg:text-[20px]">
                   {item.quote}
                 </blockquote>
-                <figcaption className="mt-6 flex items-center gap-3 border-t border-hairline pt-5">
+                <figcaption className="mt-6 flex items-center gap-3 border-t border-[#EEEEEE] pt-5">
                   <span
-                    className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full text-sm font-extrabold"
+                    className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full text-sm font-bold"
                     style={{ background: item.tint, color: item.ink }}
                     aria-hidden
                   >
                     {item.initials}
                   </span>
                   <span>
-                    <span className="block font-extrabold text-ink">{item.name}</span>
-                    <span className="block text-sm font-semibold text-ink-soft">
+                    <span className="block font-bold text-[#232323]">{item.name}</span>
+                    <span className="block text-sm font-normal text-[#878787]">
                       {item.detail}
                     </span>
                   </span>
