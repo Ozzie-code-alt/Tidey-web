@@ -59,7 +59,7 @@ const roles: Role[] = [
 export default function RoleCards() {
   return (
     <section className="bg-white">
-      <div className="mx-auto max-w-[1820px] px-4 py-10 lg:px-10 lg:py-[100px]">
+      <div className="mx-auto max-w-[1820px] px-5 py-10 lg:px-10 lg:py-[100px]">
         <h2 className="text-center text-[30px] font-bold leading-[38px] tracking-[-1.66px] text-[#232323] lg:text-[70px] lg:leading-[88px]">
           Built for every age
         </h2>
@@ -71,11 +71,11 @@ export default function RoleCards() {
               className={`grid grid-cols-[1fr_auto] items-stretch gap-0 min-h-[213px] rounded-[30px] py-6 pl-6 shadow-[inset_0px_0px_20px_#FFFFFF] lg:py-8 lg:pl-8 ${r.bg}`}
             >
               {/* text takes the remaining column width */}
-              <div className="flex flex-col self-center -mr-12 lg-mr-7">
+              <div className="flex flex-col self-center -mr-13 lg-mr-7">
                 <span className="text-[32px] font-bold leading-[40px] text-white lg:text-[40px] lg:leading-[50px]">
                   {r.title}
                 </span>
-                <span className="mt-3 inline-block w-fit rounded-[37px] bg-white px-[12px] py-1 text-[12px] font-bold uppercase leading-[15px] tracking-[0.05px] text-[#B8B8B8] lg:px-[18px]">
+                <span className="mt-3 inline-block w-fit rounded-[37px] bg-white px-4.5 py-1 text-[12px] font-bold uppercase leading-[15px] tracking-[0.05px] text-[#B8B8B8] lg:px-[18px]">
                   {r.tag}
                 </span>
                 <p className="mt-[18px] text-[14px] font-semibold leading-[24px] text-white lg:text-[18px] lg:leading-[27px] max-w-5/6">

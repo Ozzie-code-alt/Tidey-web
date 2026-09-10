@@ -20,7 +20,7 @@ export function StoreButton({
     <Link
       href={href}
       className={
-        "inline-flex items-center justify-center gap-[14px] rounded-[60px] bg-[#0088FA] px-8 py-5 text-white shadow-[inset_0px_0px_20px_#FFFFFF] transition hover:brightness-105 active:scale-[0.97] " +
+        "inline-flex items-center justify-center gap-[14px] min-w-79 rounded-[60px] bg-[#0088FA] px-8 py-5 text-white shadow-[inset_0px_0px_20px_#FFFFFF] transition hover:brightness-105 active:scale-[0.97] " +
         className
       }
     >

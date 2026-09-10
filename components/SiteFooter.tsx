@@ -33,7 +33,7 @@ const columns = [navColumn, contactColumn, followColumn];
 
 export default function SiteFooter() {
   return (
-    <footer className="mx-auto mt-auto w-full max-w-[1694px] bg-white px-5 py-10 lg:px-10 lg:py-[100px]">
+    <footer className="mx-auto mt-auto w-full max-w-[1694px] bg-white p-5 lg:px-10 lg:py-[100px]">
       <div className="flex flex-col items-center gap-5 lg:flex-row lg:items-start lg:justify-between">
         <Link
           href="/"

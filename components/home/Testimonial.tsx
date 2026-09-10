@@ -33,7 +33,7 @@ const quotes: Quote[] = [
   {
     title: "Money lessons without lectures",
     quote:
-      "My teens set their own savings goals, we match a few of them, and they\u2019ve started splitting coins between spending and saving on their own. Tidey does the teaching for me, and they actually listen to the app more than me.",
+      "My teens set their own savings goals, we match a few of them, and they\u2019ve started splitting coins between spending and saving on their own. Tidey does the teaching for me.",
     name: "Marcus L.",
   },
   {
@@ -50,7 +50,7 @@ function ArrowButton({ direction, onClick }: { direction: "prev" | "next"; onCli
       type="button"
       aria-label={direction === "prev" ? "Previous testimonial" : "Next testimonial"}
       onClick={onClick}
-      className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#FBFBFB] shadow-[-7px_8px_26px_#EBEBEB] cursor-pointer"
+      className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#FBFBFB] shadow-[-7px_8px_26px_#EBEBEB] cursor-pointer z-1"
     >
       <Image
         src="/assets/icons/icon-forward.svg"
@@ -68,7 +68,7 @@ export default function Testimonial() {
 
   return (
     <section className="bg-white">
-      <div className="mx-auto flex max-w-[1820px] flex-col items-start justify-between gap-10 lg:flex-row lg:gap-[20px] px-4 py-10 lg:px-10 lg:py-[100px]">
+      <div className="mx-auto flex max-w-[1820px] flex-col items-start justify-between gap-8 lg:flex-row lg:gap-[20px] px-5 py-10 lg:px-10 lg:py-[100px]">
         {/* Left — heading + copy + single store CTA */}
         <div className="w-full max-w-[900px] shrink-0 lg:px-20 lg:py-[69px]">
           <h2 className="text-[28px] font-bold leading-[35px] tracking-[-0.5px] text-[#232323] lg:text-[60px] lg:leading-[76px] lg:tracking-[-1.66px]">
@@ -77,7 +77,7 @@ export default function Testimonial() {
           <p className="mt-[14px] max-w-[625px] text-[16px] font-normal leading-[24px] text-[#878787] lg:mt-[26px] lg:text-[18px]">
             Set chores, create rewards and help your kids build habits they can carry with them as they grow.
           </p>
-          <div className="mt-6 lg:mt-10">
+          <div className="mt-6 lg:mt-10 hidden lg:block">
             <StoreButton platform="iphone" />
           </div>
         </div>
@@ -96,7 +96,7 @@ export default function Testimonial() {
               >
             {quotes.map((q) => (
               <SwiperSlide key={q.name}>
-                <div className="flex min-h-[370px] flex-col justify-center rounded-[30px] bg-[#FBFBFB] p-6 lg:min-h-[467px] lg:p-10">
+                <div className="flex min-h-[370px] flex-col justify-start lg:justify-center rounded-[30px] bg-[#FBFBFB] p-6 lg:min-h-[467px] lg:p-10">
                   <div className="flex items-center gap-[3.79px] lg:gap-[5.48px]">
                     {Array.from({ length: 5 }).map((_, i) => (
                       <Image
@@ -105,7 +105,7 @@ export default function Testimonial() {
                         alt=""
                         width={32}
                         height={31}
-                        className="h-[26px] w-[26px] lg:h-[37px] lg:w-[37px]"
+                        className="h-[26px] w-[26px] object-contain lg:h-[37px] lg:w-[37px]"
                       />
                     ))}
                   </div>
