@@ -83,9 +83,9 @@
   --header-h: 91px;
   --header-fade: linear-gradient(
   180deg,
-  rgba(22, 131, 230, 0.94) 0%,
-  rgba(22, 131, 230, 0.72) 45%,
-  rgba(22, 131, 230, 0) 100%
+  rgba(1, 174, 250, 0.94) 0%,
+  rgba(1, 174, 250, 0.72) 45%,
+  rgba(1, 174, 250, 0) 100%
 );
 }
 
@@ -206,7 +206,10 @@
 
 /* ===== Coming Soon page ===== */
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
+html{
+  scroll-behavior:smooth;
+  background:#fff linear-gradient(180deg,#01AEFA 15vh,#48D4FB 40vh,#ffffff 90vh) no-repeat;
+}
 body{margin:0;font-family:var(--font-sans);color:var(--ink-900);background:#fff;overflow-x:hidden}
 img{display:block;max-width:100%}
 

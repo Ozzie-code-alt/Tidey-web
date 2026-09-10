@@ -1,9 +1,5 @@
 import Image from "next/image";
 
-// Section 2 — Gradient heading band with two floating decor images:
-// the Tidey coin (left) and the cleaning spray (right).
-// Both appear on desktop AND mobile (smaller / repositioned via responsive
-// utilities), so there are exactly two <Image> elements — matching Figma.
 export default function HeadingBand() {
   return (
     <section className="relative isolate flex items-center overflow-hidden bg-white py-4 lg:py-[140px]">
