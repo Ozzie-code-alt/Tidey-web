@@ -3,7 +3,7 @@ import PageHero from "@/components/PageHero";
 import ContactForm from "@/components/ContactForm";
 
 export const metadata: Metadata = {
-  title: "Contact Tidey",
+  title: "Contact",
   description: "Questions, press enquiries, or feedback — get in touch.",
 };
 

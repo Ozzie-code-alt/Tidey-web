@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import LegalLayout from "@/components/LegalLayout";
 
 export const metadata: Metadata = {
-  title: "Terms of Service — Tidey",
+  title: "Terms of Service",
   description:
     "The Terms of Service that govern your access to and use of the Tidey app.",
 };

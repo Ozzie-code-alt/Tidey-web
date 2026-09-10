@@ -5,7 +5,7 @@ import TestimonialSwiper  from "@/components/TestimonialSwiper";
 import TeamGrid from "@/components/TeamGrid";
 
 export const metadata: Metadata = {
-  title: "About Tidey — chores, reimagined",
+  title: "About",
   description:
     "Why we built Tidey: a chore app that kids actually want to open.",
 };
