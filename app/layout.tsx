@@ -16,8 +16,12 @@ export const metadata: Metadata = {
   },
   description: SITE_DESCRIPTION,
   icons: {
-    icon: [{ url: "/assets/icons/favicon.png", type: "image/png" }],
-    apple: [{ url: "/assets/icons/favicon.png", sizes: "180x180" }],
+    icon: [
+      { url: "/assets/favicon/favicon-16x16.png", type: "image/png", sizes: "16x16" },
+      { url: "/assets/favicon/favicon-32x32.png", type: "image/png", sizes: "32x32" },
+      { url: "/assets/favicon/favicon.ico", type: "image/x-icon" },
+    ],
+    apple: [{ url: "/assets/favicon/apple-touch-icon.png", sizes: "180x180" }],
   },
   openGraph: {
     type: "website",
