@@ -65,7 +65,7 @@ export default function Header() {
           onClick={() => setOpen((prev) => !prev)}
           aria-label={open ? "Close menu" : "Open menu"}
           aria-expanded={open}
-          className="relative z-[60] flex flex-col w-[25px] items-center justify-center md:hidden cursor-pointer mr-4 md:mr-0"
+          className="relative z-[60] flex flex-col w-[25px] items-center justify-center md:hidden cursor-pointer mr-4 md:mr-0 h-9"
         >
           <span
             aria-hidden
