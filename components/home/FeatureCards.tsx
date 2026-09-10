@@ -1,9 +1,5 @@
 import Image from "next/image";
 
-// Section 3 — "step / feature" cards (bento, mirrors Figma order 2).
-// Asset pairing (by copy order): get-rewards, investment, create-chore, feed-the-pet.
-// TODO:: If any screenshot is sitting on the wrong card, swap only its src.
-
 type Card = {
   heading: string;
   body?: string;
@@ -63,7 +59,7 @@ const family: Card = {
 };
 
 const rewards: Card = {
-  heading: "Rewards for everyday tasks",
+  heading: "Rewards for \n everyday tasks",
   body: "Set simple tasks, choose the rewards and make everyday responsibilities feel more motivating.",
   bodyMobile: "text-[14px] leading-[160%]",
   img: "/assets/screens/feed-the-pet.png",
@@ -90,7 +86,7 @@ function headingCls(size: Card["size"]) {
 
 function CardBody({ card }: { card: Card }) {
   return (
-    <div className="relative z-0 p-6 lg:p-[46px]">
+    <div className="relative z-0 p-6 lg:pt-11.5 lg:px-11.5 lg:pb-7.5">
       <h3
         className={`text-[#232323] ${headingCls(card.size)} whitespace-pre-line font-bold tracking-[-0.5px] lg:tracking-[-1.66px]`}
       >
@@ -98,7 +94,7 @@ function CardBody({ card }: { card: Card }) {
       </h3>
       {card.body && (
         <p
-          className={`mt-3 max-w-[500px] font-normal text-[#878787] lg:mt-6 ${card.bodyMobile ?? "text-[16px] leading-[160%]"} lg:text-[20px] lg:leading-[160%]`}
+          className={`mt-3 max-w-[470px] font-normal text-[#878787] lg:mt-6 ${card.bodyMobile ?? "text-[16px] leading-[160%]"} lg:text-[20px] lg:leading-[160%]`}
         >
           {card.body}
         </p>
@@ -110,22 +106,18 @@ function CardBody({ card }: { card: Card }) {
 function CardImage({ card }: { card: Card }) {
   return (
     <div className="flex flex-1 items-end justify-center lg:items-center lg:justify-end">
-      {/* mobile: full-bleed card width, bottom-aligned */}
-      <Image
-        src={card.imgMobile}
-        alt={card.alt}
-        width={card.imgMW}
-        height={card.imgMH}
-        className="block! h-auto w-full object-contain lg:hidden!"
-      />
-      {/* desktop: padded, capped size */}
-      <Image
-        src={card.img}
-        alt={card.alt}
-        width={card.imgW}
-        height={card.imgH}
-        className="hidden! h-auto w-full max-w-[320px] object-contain lg:block! lg:max-w-[440px]"
-      />
+      {/* native <picture> swap: mobile shows the mobile crop full-bleed,
+          desktop the desktop shot — chosen by the browser before paint. */}
+      <picture className="block w-full lg:w-auto">
+        <source media="(min-width: 1024px)" srcSet={card.img} />
+        <Image
+          src={card.imgMobile}
+          alt={card.alt}
+          width={card.imgMW}
+          height={card.imgMH}
+          className="h-auto w-full max-w-[440px] object-contain"
+        />
+      </picture>
     </div>
   );
 }

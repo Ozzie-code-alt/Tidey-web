@@ -49,7 +49,7 @@ export default function SiteFooter() {
           />
         </Link>
 
-        <div className="flex w-full flex-row justify-between gap-[23px] lg:w-auto lg:gap-[99px]">
+        <div className="flex w-full flex-row justify-between gap-[23px] lg:w-auto lg:gap-[110px]">
           {columns.map((col) => (
             <div
               key={col.title}
