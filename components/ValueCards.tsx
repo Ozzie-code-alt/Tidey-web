@@ -1,3 +1,10 @@
+const tints = [
+  "bg-[linear-gradient(180deg,#D5F1F8_0%,#F2FBFD_100%)]",
+  "bg-[linear-gradient(180deg,#EBFCD8_0%,#F9FEF3_100%)]",
+  "bg-[linear-gradient(180deg,#FBF7D9_0%,#FEFDF4_100%)]",
+  "bg-[linear-gradient(180deg,#FBEDF2_0%,#FEFAFB_100%)]",
+];
+
 const values = [
   {
     id: "playful",
@@ -27,27 +34,29 @@ const values = [
 
 export default function ValueCards() {
   return (
-    <section className="mx-auto max-w-[1120px] px-6 py-16 md:py-20">
-      <div className="mx-auto mb-12 max-w-[34ch] text-center">
-        <h2 className="font-display text-[clamp(26px,4vw,38px)] font-extrabold leading-[1.1] text-ink">
+    <section className="mx-auto w-full max-w-[1738px] px-5 py-10 lg:px-10 lg:py-[100px]">
+      <div className="mx-auto mb-8 max-w-[34ch] text-center lg:mb-[60px]">
+        <h2 className="text-[32px] font-bold leading-[40px] tracking-[-0.5px] text-[#232323] lg:text-[52px] lg:leading-[66px] lg:tracking-[-1.66px]">
           What we believe
         </h2>
-        <p className="mt-3 text-lg font-semibold text-ink-soft">
+        <p className="mt-3 text-[16px] font-normal leading-[160%] text-[#878787] lg:text-[20px]">
           Four ideas that shape every decision we make.
         </p>
       </div>
 
-      <div className="grid gap-5 md:grid-cols-2">
-        {values.map((value) => (
+      <div className="grid gap-6 md:grid-cols-2 lg:gap-[26px]">
+        {values.map((value, i) => (
           <article
             key={value.id}
-            className="rounded-card border border-hairline bg-[var(--surface-subtle)] p-7 transition-transform duration-300 hover:-translate-y-1.5 hover:shadow-[var(--shadow-md)]"
+            className={`rounded-[26px] p-6 shadow-[inset_0px_0px_20px_#FFFFFF] lg:rounded-[40px] lg:p-10 ${tints[i % tints.length]}`}
           >
             <span className="text-3xl" aria-hidden>
               {value.emoji}
             </span>
-            <h3 className="mt-4 text-xl font-extrabold text-ink">{value.title}</h3>
-            <p className="mt-2 font-semibold leading-relaxed text-ink-soft">
+            <h3 className="mt-4 text-[20px] font-bold leading-[160%] text-[#232323] lg:text-[32px] lg:leading-[40px]">
+              {value.title}
+            </h3>
+            <p className="mt-2 text-[16px] font-normal leading-[160%] text-[#878787] lg:text-[20px]">
               {value.body}
             </p>
           </article>

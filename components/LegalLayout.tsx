@@ -14,7 +14,7 @@ export default function LegalLayout({
 }) {
   return (
     <>
-      <header className="legal-head">
+      {/* <header className="legal-head">
         <div className="legal-head-inner">
           <a href="/" aria-label="Tidey home" className="legal-logo-link">
             <img
@@ -27,7 +27,7 @@ export default function LegalLayout({
             ← Back home
           </a>
         </div>
-      </header>
+      </header> */}
 
       <main className="legal">
         <article className="legal-inner">

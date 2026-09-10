@@ -7,8 +7,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { StoreButton } from "@/components/StoreButtons";
 
-// Section 5 — testimonial / explainer with a quote-card swiper.
-// Desktop: arrows above the card (right-aligned). Mobile: arrows below, centered.
 type Quote = { title: string; quote: string; name: string };
 
 const quotes: Quote[] = [
@@ -67,14 +65,14 @@ export default function Testimonial() {
   const [swiper, setSwiper] = useState<SwiperClass | null>(null);
 
   return (
-    <section className="bg-white">
-      <div className="mx-auto flex max-w-[1820px] flex-col items-start justify-between gap-8 lg:flex-row lg:gap-[20px] px-5 py-10 lg:px-10 lg:py-[100px]">
+    <section className="bg-white overflow-hidden">
+      <div className="mx-auto grid max-w-[1820px] grid-cols-1 items-start gap-8 px-5 py-10 lg:gap-5 lg:px-10 lg:py-35 xl:grid-cols-2">
         {/* Left — heading + copy + single store CTA */}
-        <div className="w-full max-w-[900px] shrink-0 lg:px-20 lg:py-[69px]">
-          <h2 className="text-[28px] font-bold leading-[35px] tracking-[-0.5px] text-[#232323] lg:text-[60px] lg:leading-[76px] lg:tracking-[-1.66px]">
+        <div className="w-full lg:pl-20 lg:pr-12 lg:py-[69px]">
+          <h2 className="text-[28px] font-bold leading-[35px] tracking-[-0.5px] text-[#232323] lg:text-[60px] lg:leading-19 lg:tracking-[-1.66px]">
             Make everyday routines work better for your family
           </h2>
-          <p className="mt-[14px] max-w-[625px] text-[16px] font-normal leading-[24px] text-[#878787] lg:mt-[26px] lg:text-[18px]">
+          <p className="mt-[14px] xl:max-w-[625px] text-[16px] font-normal leading-[24px] text-[#878787] lg:mt-[26px] lg:text-[18px]">
             Set chores, create rewards and help your kids build habits they can carry with them as they grow.
           </p>
           <div className="mt-6 lg:mt-10 hidden lg:block">
@@ -83,7 +81,7 @@ export default function Testimonial() {
         </div>
 
         {/* Right — quote-card swiper */}
-        <div className="w-full max-w-[663px] lg:max-w-[742px] lg:mr-auto">
+        <div className="w-full lg:max-w-[763px] m-auto xl:mr-auto">
           <div className="lg:flex lg:items-center lg:gap-7">
             <div className="min-w-0 lg:flex-1">
               <Swiper

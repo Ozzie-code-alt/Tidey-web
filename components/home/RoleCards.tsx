@@ -1,13 +1,5 @@
 import Image from "next/image";
 
-// Section 4 — three age-role cards ("Built for every age").
-// People: /assets/illustrations/junior-explorer.png (sky)
-//         /assets/illustrations/pro-entrepreneur.png (sun / Pilot)
-//         /assets/illustrations/teen-strategist.png (forest / Teen Strategist, pre-flipped)
-//
-// Layout: each card is a 2-col grid (text = remaining space, image = its own
-// size). The image bleeds flush into the card's rounded corner via overflow
-// hidden + negative margins — no position:absolute anywhere.
 type Role = {
   title: string;
   tag: string;
@@ -17,7 +9,7 @@ type Role = {
   imgH: number;
   alt: string;
   bg: string;
-  imgCls: string; // responsive height for the person cut-out (width follows aspect ratio)
+  imgCls: string;
 };
 
 const roles: Role[] = [

@@ -29,14 +29,14 @@ function Field({
   textarea,
 }: FieldProps) {
   const base =
-    "w-full rounded-[var(--radius-md)] border bg-white px-4 py-3 font-semibold text-ink outline-none transition placeholder:font-medium placeholder:text-[var(--ink-400)] focus:ring-4";
+    "w-full rounded-[20px] border bg-white px-5 py-3.5 text-[16px] font-normal text-[#232323] outline-none transition placeholder:font-normal placeholder:text-[#878787] focus:ring-4";
   const tone = error
     ? "border-[#E24B4A] focus:border-[#E24B4A] focus:ring-[rgba(226,75,74,0.15)]"
-    : "border-hairline focus:border-[var(--blue-400)] focus:ring-[rgba(79,182,255,0.2)]";
+    : "border-[#D9EFFD] focus:border-[#00BAFA] focus:ring-[rgba(0,186,250,0.18)]";
 
   return (
     <div>
-      <label htmlFor={id} className="mb-2 block text-sm font-extrabold text-ink">
+      <label htmlFor={id} className="mb-2 block text-[14px] font-semibold text-[#232323]">
         {label}
       </label>
 
@@ -65,7 +65,7 @@ function Field({
       )}
 
       {error && (
-        <p id={`${id}-error`} className="mt-2 text-sm font-bold text-[#E24B4A]">
+        <p id={`${id}-error`} className="mt-2 text-sm font-semibold text-[#E24B4A]">
           {error}
         </p>
       )}
@@ -111,17 +111,17 @@ export default function ContactForm() {
 
   if (status === "sent") {
     return (
-      <div className="rounded-card border border-[var(--blue-200)] bg-[var(--surface-blue)] p-8 text-center">
-        <p className="font-display text-2xl font-extrabold text-[var(--blue-700)]">
+      <div className="rounded-[26px] bg-[linear-gradient(180deg,#D5F1F8_0%,#F2FBFD_100%)] p-8 text-center shadow-[inset_0px_0px_20px_#FFFFFF] lg:rounded-[40px]">
+        <p className="text-[24px] font-bold leading-[32px] text-[#232323] lg:text-[32px] lg:leading-[40px]">
           Message sent
         </p>
-        <p className="mt-2 font-semibold text-ink-soft">
+        <p className="mt-2 text-[16px] font-normal leading-[160%] text-[#878787] lg:text-[18px]">
           We read everything and usually reply within two working days.
         </p>
         <button
           type="button"
           onClick={() => setStatus("idle")}
-          className="mt-5 font-bold text-[var(--blue-600)] underline decoration-[var(--blue-200)] underline-offset-4 hover:decoration-[var(--blue-500)]"
+          className="mt-5 text-[16px] font-semibold text-[#0088FA] underline underline-offset-4 transition hover:text-[#00BAFA]"
         >
           Send another
         </button>
@@ -163,7 +163,7 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={status === "sending"}
-        className="btn-cta mt-1 self-start disabled:cursor-not-allowed disabled:opacity-60"
+        className="h-[63px] self-start rounded-full bg-[linear-gradient(180deg,#0088FA_0%,#00CCFA_100%)] px-[46px] text-[18px] font-semibold text-white transition hover:brightness-105 active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-60"
       >
         {status === "sending" ? "Sending…" : "Send message"}
       </button>

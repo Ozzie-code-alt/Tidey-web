@@ -2,18 +2,20 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import Image from "next/image";
 import MobileDrawer from "./MobileDrawer";
 
 const links = [
   { href: "/", label: "Home" },
-  { href: "/about", label: "About" },
-  // { href: "/contact", label: "Contact" },
+  { href: "/about", label: "About" }
 ];
 
 export default function Header() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
+  const forceFade = pathname === "/privacy" || pathname === "/terms";
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -29,10 +31,10 @@ export default function Header() {
         className="pointer-events-none absolute inset-x-0 top-0 h-[calc(var(--header-h)+20px)] transition-opacity duration-300"
         style={{
           background: "var(--header-fade)",
-          opacity: scrolled ? 1 : 0,
+          opacity: forceFade || scrolled ? 1 : 0,
         }}
       />
-      <div className="relative mx-auto flex h-full max-w-[1940px] items-center justify-between px-3 lg:px-[60px]">
+      <div className="relative mx-auto flex h-full max-w-[1940px] items-center justify-between md:px-7.5 lg:px-[60px]">
         <Link href="/" aria-label="Tidey home" className="shrink-0">
           <Image
             src="/assets/illustrations/tidey-logo-white.svg"
@@ -63,7 +65,7 @@ export default function Header() {
           onClick={() => setOpen((prev) => !prev)}
           aria-label={open ? "Close menu" : "Open menu"}
           aria-expanded={open}
-          className="relative z-[60] flex flex-col w-[25px] items-center justify-center md:hidden cursor-pointer mr-4 md:mr-0"
+          className="relative z-[60] flex flex-col w-[25px] items-center justify-center md:hidden cursor-pointer mr-4 md:mr-0 h-9"
         >
           <span
             aria-hidden

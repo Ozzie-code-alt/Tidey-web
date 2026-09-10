@@ -8,7 +8,6 @@ type StoreButtonProps = {
   className?: string;
 };
 
-// Single rounded "Download for …" pill used on the hero, testimonial + final CTA.
 export function StoreButton({
   href = "/contact",
   platform,
@@ -20,7 +19,7 @@ export function StoreButton({
     <Link
       href={href}
       className={
-        "inline-flex items-center justify-center gap-[14px] min-w-79 rounded-[60px] bg-[#0088FA] px-8 py-5 text-white shadow-[inset_0px_0px_20px_#FFFFFF] transition hover:brightness-105 active:scale-[0.97] " +
+        "inline-flex items-center justify-center gap-[14px] md:min-w-79 rounded-[60px] bg-[#0088FA] px-8 py-5 text-white shadow-[inset_0px_0px_20px_#FFFFFF] transition hover:brightness-105 active:scale-[0.97] " +
         className
       }
     >
@@ -32,7 +31,7 @@ export function StoreButton({
         className={isIOS ? "h-[22px] w-[18px]" : "h-[22px] w-[20px]"}
       />
       <span className="text-center text-[18px] font-semibold leading-none lg:text-[20px]">
-        {label ?? (isIOS ? "Download for iPhone" : "Download for Android")}
+        {label ?? (isIOS ? "Coming Soon" : "Coming Soon")}
       </span>
     </Link>
   );
@@ -44,7 +43,6 @@ type StoreButtonsProps = {
   className?: string;
 };
 
-// Convenience wrapper for the two-button pair.
 export default function StoreButtons({
   platforms = ["iphone", "android"],
   layout = "row",
