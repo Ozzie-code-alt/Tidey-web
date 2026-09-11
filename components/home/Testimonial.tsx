@@ -66,13 +66,13 @@ export default function Testimonial() {
 
   return (
     <section className="bg-white overflow-hidden">
-      <div className="mx-auto grid max-w-[1820px] grid-cols-1 items-start gap-8 px-5 py-10 lg:gap-5 lg:px-10 lg:py-35 xl:grid-cols-2">
+      <div className="mx-auto grid max-w-[1820px] grid-cols-1 items-start gap-8 px-5 py-10 lg:gap-5 lg:px-10 lg:py-[clamp(75px,7.37vw,140px)] xl:grid-cols-2">
         {/* Left — heading + copy + single store CTA */}
-        <div className="w-full lg:pl-20 lg:pr-12 lg:py-[69px]">
-          <h2 className="text-[28px] font-bold leading-[35px] tracking-[-0.5px] text-[#232323] lg:text-[60px] lg:leading-19 lg:tracking-[-1.66px]">
+        <div className="w-full lg:pl-[clamp(43px,4.21vw,80px)] lg:pr-[clamp(26px,2.53vw,48px)] lg:py-[clamp(37px,3.63vw,69px)]">
+          <h2 className="text-[28px] font-bold leading-[35px] tracking-[-0.5px] text-[#232323] lg:text-[clamp(32px,3.16vw,60px)] lg:leading-[127%] lg:tracking-[-1.66px]">
             Make everyday routines work better for your family
           </h2>
-          <p className="mt-[14px] xl:max-w-[625px] text-[16px] font-normal leading-[24px] text-[#878787] lg:mt-[26px] lg:text-[18px]">
+          <p className="mt-[14px] xl:max-w-[625px] text-[16px] font-normal leading-[24px] text-[#878787] lg:mt-[clamp(14px,1.37vw,26px)] lg:text-[clamp(14px,calc(0.57vw+7.14px),18px)] lg:leading-[130%]">
             Set chores, create rewards and help your kids build habits they can carry with them as they grow.
           </p>
           <div className="mt-6 lg:mt-10 hidden lg:block">
@@ -81,11 +81,11 @@ export default function Testimonial() {
         </div>
 
         {/* Right — quote-card swiper */}
-        <div className="w-full lg:max-w-[763px] m-auto xl:mr-auto">
+        <div className="w-full lg:max-w-[clamp(411px,40.16vw,776px)] m-auto xl:mr-auto">
           <div className="lg:flex lg:items-center lg:gap-7">
             <div className="min-w-0 lg:flex-1">
               <Swiper
-                className="testimonial-swiper !ml-0 lg:max-w-[663px]"
+                className="testimonial-swiper !ml-0 lg:max-w-[clamp(357px,34.89vw,663px)]"
                 onSwiper={setSwiper}
                 loop
                 grabCursor
@@ -94,7 +94,7 @@ export default function Testimonial() {
               >
             {quotes.map((q) => (
               <SwiperSlide key={q.name}>
-                <div className="flex min-h-[370px] flex-col justify-start lg:justify-center rounded-[30px] bg-[#FBFBFB] p-6 lg:min-h-[467px] lg:p-10">
+                <div className="flex min-h-[370px] flex-col justify-start lg:justify-center rounded-[30px] bg-[#FBFBFB] p-6 lg:min-h-[clamp(251px,24.58vw,467px)] lg:p-[clamp(calc(var(--spacing)*8),2.11vw,calc(var(--spacing)*10))]">
                   <div className="flex items-center gap-[3.79px] lg:gap-[5.48px]">
                     {Array.from({ length: 5 }).map((_, i) => (
                       <Image
@@ -103,7 +103,7 @@ export default function Testimonial() {
                         alt=""
                         width={32}
                         height={31}
-                        className="h-[26px] w-[26px] object-contain lg:h-[37px] lg:w-[37px]"
+                        className="h-[26px] w-[26px] object-contain lg:h-[clamp(20px,1.95vw,37px)] lg:w-[clamp(20px,1.95vw,37px)]"
                       />
                     ))}
                   </div>
@@ -111,7 +111,7 @@ export default function Testimonial() {
                   <h3 className="mt-6 bg-[linear-gradient(180deg,#0088FA_0%,#00CCFA_100%)] bg-clip-text text-[26px] font-semibold leading-[33px] text-transparent">
                     {q.title}
                   </h3>
-                  <p className="mt-6 text-[16px] font-medium leading-[24px] text-[#878787] lg:text-[18px]">
+                  <p className="mt-6 text-[16px] font-medium leading-[24px] text-[#878787] lg:text-[clamp(14px,calc(0.57vw+7.14px),18px)] lg:leading-[130%]">
                     {q.quote}
                   </p>
                   <p className="mt-6 text-[16px] font-semibold leading-[24px] text-[#3C3C3C] lg:font-bold">

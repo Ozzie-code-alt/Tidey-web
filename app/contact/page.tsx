@@ -17,9 +17,9 @@ export default function ContactPage() {
         subtitle="Questions about early access, press enquiries, or just an idea you want to throw at us."
       />
 
-      <section className="mx-auto grid w-full max-w-[1120px] gap-10 px-5 py-10 md:grid-cols-[1fr_1.2fr] md:gap-12 lg:px-10 lg:py-[100px]">
+      <section className="mx-auto grid w-full max-w-[1120px] gap-10 px-5 py-10 md:grid-cols-[1fr_1.2fr] md:gap-12 lg:px-10 lg:py-[clamp(54px,5.26vw,100px)]">
         <div>
-          <h2 className="text-[24px] font-bold leading-[32px] tracking-[-0.5px] text-[#232323] lg:text-[32px] lg:leading-[40px]">
+          <h2 className="text-[24px] font-bold leading-[32px] tracking-[-0.5px] text-[#232323] lg:text-[clamp(22px,1.68vw,32px)] lg:leading-[125%]">
             Other ways to reach us
           </h2>
           <dl className="mt-6 flex flex-col gap-5">

@@ -112,7 +112,7 @@ export default function ContactForm() {
   if (status === "sent") {
     return (
       <div className="rounded-[26px] bg-[linear-gradient(180deg,#D5F1F8_0%,#F2FBFD_100%)] p-8 text-center shadow-[inset_0px_0px_20px_#FFFFFF] lg:rounded-[40px]">
-        <p className="text-[24px] font-bold leading-[32px] text-[#232323] lg:text-[32px] lg:leading-[40px]">
+        <p className="text-[24px] font-bold leading-[32px] text-[#232323] lg:text-[clamp(22px,1.68vw,32px)] lg:leading-[125%]">
           Message sent
         </p>
         <p className="mt-2 text-[16px] font-normal leading-[160%] text-[#878787] lg:text-[18px]">

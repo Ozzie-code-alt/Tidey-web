@@ -61,13 +61,13 @@ export default function TestimonialSwiper() {
   };
 
   return (
-    <section className="bg-white px-5 py-10 lg:px-10 lg:py-[100px]">
-      <div className="mx-auto mb-8 flex max-w-[1738px] flex-col items-center gap-6 md:flex-row md:items-end md:justify-between lg:mb-[60px]">
+    <section className="bg-white px-5 py-10 lg:px-10 lg:py-[clamp(54px,5.26vw,100px)]">
+      <div className="mx-auto mb-8 flex max-w-[1738px] flex-col items-center gap-6 md:flex-row md:items-end md:justify-between lg:mb-[clamp(32px,3.16vw,60px)]">
         <div className="text-center md:text-left">
-          <h2 className="text-[32px] font-bold leading-[40px] tracking-[-0.5px] text-[#232323] lg:text-[52px] lg:leading-[66px] lg:tracking-[-1.66px]">
+          <h2 className="text-[32px] font-bold leading-[40px] tracking-[-0.5px] text-[#232323] lg:text-[clamp(28px,2.74vw,52px)] lg:leading-[127%] lg:tracking-[-1.66px]">
             Parents are talking
           </h2>
-          <p className="mt-3 max-w-[40ch] text-[16px] font-normal leading-[160%] text-[#878787] lg:text-[20px]">
+          <p className="mt-3 max-w-[40ch] text-[16px] font-normal leading-[160%] text-[#878787] lg:text-[clamp(14px,calc(0.86vw+3.71px),20px)]">
             Early access families, in their own words.
           </p>
         </div>
@@ -137,7 +137,7 @@ export default function TestimonialSwiper() {
                 >
                   &ldquo;
                 </span>
-                <blockquote className="mt-2 flex-1 text-[16px] font-normal leading-[160%] text-[#232323] lg:text-[20px]">
+                <blockquote className="mt-2 flex-1 text-[16px] font-normal leading-[160%] text-[#232323] lg:text-[clamp(14px,calc(0.86vw+3.71px),20px)]">
                   {item.quote}
                 </blockquote>
                 <figcaption className="mt-6 flex items-center gap-3 border-t border-[#EEEEEE] pt-5">

@@ -20,13 +20,13 @@ export default function AboutPage() {
         subtitle="Tidey started as a sticker chart on a fridge. It worked for about nine days."
       />
 
-      <section className="mx-auto max-w-[900px] px-5 py-10 lg:px-10 lg:py-[100px]">
-        <p className="text-[16px] font-normal leading-[160%] text-[#878787] lg:text-[20px]">
+      <section className="mx-auto max-w-[900px] px-5 py-10 lg:px-10 lg:py-[clamp(54px,5.26vw,100px)]">
+        <p className="text-[16px] font-normal leading-[160%] text-[#878787] lg:text-[clamp(14px,calc(0.86vw+3.71px),20px)]">
           Every parent knows the cycle. You ask, they forget. You ask again,
           louder. Something eventually gets done, badly, and nobody enjoyed any
           part of it.
         </p>
-        <p className="mt-5 text-[16px] font-normal leading-[160%] text-[#878787] lg:text-[20px]">
+        <p className="mt-5 text-[16px] font-normal leading-[160%] text-[#878787] lg:text-[clamp(14px,calc(0.86vw+3.71px),20px)]">
           We thought the problem wasn&apos;t the kids. It was the format. So we
           rebuilt the chore chart as something closer to a game — missions,
           coins, streaks, and rewards that a seven-year-old actually cares about.

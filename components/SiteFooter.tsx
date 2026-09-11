@@ -33,7 +33,7 @@ const columns = [navColumn, contactColumn, followColumn];
 
 export default function SiteFooter() {
   return (
-    <footer className="mx-auto mt-auto w-full max-w-[1694px] bg-white p-5 lg:px-10 lg:py-[100px]">
+    <footer className="mx-auto mt-auto w-full max-w-[1820px] bg-white p-5 lg:px-[clamp(40px,5.26vw,100px)] lg:py-[clamp(54px,5.26vw,100px)]">
       <div className="flex flex-col items-center gap-5 lg:flex-row lg:items-start lg:justify-between">
         <Link
           href="/"
@@ -45,17 +45,17 @@ export default function SiteFooter() {
             alt="Tidey"
             width={330}
             height={163}
-            className="h-auto w-[252px] max-w-full lg:w-[330px]"
+            className="h-auto w-[252px] max-w-full lg:w-[clamp(178px,17.37vw,330px)]"
           />
         </Link>
 
-        <div className="flex w-full flex-row justify-between gap-[23px] lg:w-auto lg:gap-[110px]">
+        <div className="flex w-full flex-row justify-between gap-[23px] lg:w-auto lg:gap-[clamp(59px,5.79vw,100px)]">
           {columns.map((col) => (
             <div
               key={col.title}
               className="flex flex-col items-start justify-start gap-[26px] lg:items-start"
             >
-              <span className="text-[14px] font-bold leading-[150%] text-[#232323] lg:text-[20px]">
+              <span className="text-[14px] font-bold leading-[150%] text-[#232323] lg:text-[clamp(16px,calc(0.57vw+9.14px),20px)]">
                 {col.title}
               </span>
               {col.links.map((link) =>
@@ -65,7 +65,7 @@ export default function SiteFooter() {
                     href={link.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-[14px] font-medium leading-[150%] text-[#232323] hover:text-[#0088FA] lg:text-[20px]"
+                    className="text-[14px] font-medium leading-[150%] text-[#232323] hover:text-[#0088FA] lg:text-[clamp(16px,calc(0.57vw+9.14px),20px)]"
                   >
                     {link.label}
                   </a>
@@ -73,7 +73,7 @@ export default function SiteFooter() {
                   <Link
                     key={link.label}
                     href={link.href}
-                    className="text-[14px] font-medium leading-[150%] text-[#232323] hover:text-[#0088FA] lg:text-[20px]"
+                    className="text-[14px] font-medium leading-[150%] text-[#232323] hover:text-[#0088FA] lg:text-[clamp(16px,calc(0.57vw+9.14px),20px)]"
                   >
                     {link.label}
                   </Link>

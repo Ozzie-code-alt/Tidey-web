@@ -76,9 +76,9 @@ const rewards: Card = {
 function headingCls(size: Card["size"]) {
   switch (size) {
     case "xl":
-      return "text-[32px] leading-[40px] lg:text-[52px] lg:leading-[66px]";
+      return "text-[32px] leading-[40px] lg:text-[clamp(28px,2.74vw,52px)] lg:leading-[127%]";
     case "lg":
-      return "text-[32px] leading-[40px] lg:text-[40px] lg:leading-[50px] lg:tracking-[-1.66px]";
+      return "text-[32px] leading-[40px] lg:text-[clamp(22px,2.11vw,40px)] lg:leading-[125%] lg:tracking-[-1.66px]";
     default:
       return "text-[32px] leading-[40px]";
   }
@@ -86,7 +86,7 @@ function headingCls(size: Card["size"]) {
 
 function CardBody({ card }: { card: Card }) {
   return (
-    <div className="relative z-0 p-6 lg:pt-11.5 lg:px-11.5 lg:pb-7.5">
+    <div className="relative z-0 py-6 px-6 lg:pt-[clamp(25px,2.42vw,46px)] lg:px-[clamp(25px,2.42vw,46px)] lg:pb-[clamp(16px,1.58vw,30px)]">
       <h3
         className={`text-[#232323] ${headingCls(card.size)} whitespace-pre-line font-bold tracking-[-0.5px] lg:tracking-[-1.66px]`}
       >
@@ -94,7 +94,7 @@ function CardBody({ card }: { card: Card }) {
       </h3>
       {card.body && (
         <p
-          className={`mt-3 max-w-[470px] font-normal text-[#878787] lg:mt-6 ${card.bodyMobile ?? "text-[16px] leading-[160%]"} lg:text-[20px] lg:leading-[160%]`}
+          className={`mt-3 max-w-125 font-normal text-[#878787] lg:mt-6 ${card.bodyMobile ?? "text-[16px] leading-[160%]"} lg:text-[clamp(14px,calc(0.86vw+3.71px),20px)] lg:leading-[160%]`}
         >
           {card.body}
         </p>
@@ -105,17 +105,17 @@ function CardBody({ card }: { card: Card }) {
 
 function CardImage({ card }: { card: Card }) {
   return (
-    <div className="flex flex-1 items-end justify-center lg:items-center lg:justify-end">
+    <div className="flex flex-1 items-end justify-center lg:items-center xl:justify-end">
       {/* native <picture> swap: mobile shows the mobile crop full-bleed,
           desktop the desktop shot — chosen by the browser before paint. */}
-      <picture className="block w-full lg:w-auto">
+      <picture className="block w-full lg:w-auto lg:mt-auto">
         <source media="(min-width: 1024px)" srcSet={card.img} />
         <Image
           src={card.imgMobile}
           alt={card.alt}
           width={card.imgMW}
           height={card.imgMH}
-          className="h-auto w-full max-w-[440px] object-contain"
+          className="h-auto w-full max-w-[clamp(237px,23.16vw,440px)] object-contain"
         />
       </picture>
     </div>
@@ -125,11 +125,11 @@ function CardImage({ card }: { card: Card }) {
 export default function FeatureCards() {
   return (
     <section className="bg-white">
-      <div className="mx-auto grid max-w-[1820px] grid-cols-1 gap-6 px-5 py-12 lg:grid-cols-[repeat(8,minmax(0,1fr))] lg:gap-[26px] lg:px-10 lg:py-[100px]">
+      <div className="mx-auto grid max-w-[1820px] grid-cols-1 gap-6 px-5 pt-12 xl:grid-cols-8 lg:gap-[clamp(14px,1.37vw,26px)] lg:px-10 lg:py-[clamp(54px,5.26vw,100px)]">
         {/* ---- Left column: money (wide) over savings + family fun ---- */}
-        <div className="flex flex-col gap-6 lg:col-span-5 lg:gap-[26px]">
+        <div className="flex flex-col gap-6 lg:col-span-5 lg:gap-[clamp(14px,1.37vw,26px)]">
           <article
-            className={`relative flex flex-col overflow-hidden rounded-[26px] shadow-[inset_0px_0px_20px_#FFFFFF] lg:rounded-[40px] lg:flex-row lg:items-stretch min-h-115 ${money.bg}`}
+            className={`relative flex flex-col overflow-hidden rounded-[26px] shadow-[inset_0px_0px_20px_#FFFFFF] lg:rounded-[40px] lg:flex-row lg:items-stretch min-h-115 lg:min-h-[clamp(247px,24.21vw,460px)] ${money.bg}`}
           >
             <div className="lg:w-[56%] flex items-center">
               <CardBody card={money} />
@@ -137,7 +137,7 @@ export default function FeatureCards() {
             <CardImage card={money} />
           </article>
 
-          <div className="flex flex-col gap-6 lg:flex-1 lg:flex-row lg:gap-[26px]">
+          <div className="flex flex-col gap-6 lg:flex-1 lg:flex-row lg:gap-[clamp(14px,1.37vw,26px)]">
             <article
               className={`relative flex flex-1 flex-col justify-center overflow-hidden rounded-[26px] p-0 shadow-[inset_0px_0px_20px_#FFFFFF] lg:rounded-[40px] ${savings.bg}`}
             >
