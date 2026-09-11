@@ -30,7 +30,7 @@ export function StoreButton({
         height={22}
         className={isIOS ? "h-[22px] w-[18px]" : "h-[22px] w-[20px]"}
       />
-      <span className="text-center text-[18px] font-semibold leading-none lg:text-[20px]">
+      <span className="text-center text-[18px] font-semibold leading-none lg:text-[clamp(16px,calc(0.57vw+9.14px),20px)]">
         {label ?? (isIOS ? "Coming Soon" : "Coming Soon")}
       </span>
     </Link>

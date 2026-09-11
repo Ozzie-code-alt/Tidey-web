@@ -34,17 +34,17 @@ const values = [
 
 export default function ValueCards() {
   return (
-    <section className="mx-auto w-full max-w-[1738px] px-5 py-10 lg:px-10 lg:py-[100px]">
-      <div className="mx-auto mb-8 max-w-[34ch] text-center lg:mb-[60px]">
-        <h2 className="text-[32px] font-bold leading-[40px] tracking-[-0.5px] text-[#232323] lg:text-[52px] lg:leading-[66px] lg:tracking-[-1.66px]">
+    <section className="mx-auto w-full max-w-[1738px] px-5 py-10 lg:px-10 lg:py-[clamp(54px,5.26vw,100px)]">
+      <div className="mx-auto mb-8 max-w-[34ch] text-center lg:mb-[clamp(32px,3.16vw,60px)]">
+        <h2 className="text-[32px] font-bold leading-[40px] tracking-[-0.5px] text-[#232323] lg:text-[clamp(28px,2.74vw,52px)] lg:leading-[127%] lg:tracking-[-1.66px]">
           What we believe
         </h2>
-        <p className="mt-3 text-[16px] font-normal leading-[160%] text-[#878787] lg:text-[20px]">
+        <p className="mt-3 text-[16px] font-normal leading-[160%] text-[#878787] lg:text-[clamp(14px,calc(0.86vw+3.71px),20px)]">
           Four ideas that shape every decision we make.
         </p>
       </div>
 
-      <div className="grid gap-6 md:grid-cols-2 lg:gap-[26px]">
+      <div className="grid gap-6 md:grid-cols-2 lg:gap-[clamp(14px,1.37vw,26px)]">
         {values.map((value, i) => (
           <article
             key={value.id}
@@ -53,10 +53,10 @@ export default function ValueCards() {
             <span className="text-3xl" aria-hidden>
               {value.emoji}
             </span>
-            <h3 className="mt-4 text-[20px] font-bold leading-[160%] text-[#232323] lg:text-[32px] lg:leading-[40px]">
+            <h3 className="mt-4 text-[20px] font-bold leading-[160%] text-[#232323] lg:text-[clamp(22px,1.68vw,32px)] lg:leading-[125%]">
               {value.title}
             </h3>
-            <p className="mt-2 text-[16px] font-normal leading-[160%] text-[#878787] lg:text-[20px]">
+            <p className="mt-2 text-[16px] font-normal leading-[160%] text-[#878787] lg:text-[clamp(14px,calc(0.86vw+3.71px),20px)]">
               {value.body}
             </p>
           </article>

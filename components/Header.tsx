@@ -34,7 +34,7 @@ export default function Header() {
           opacity: forceFade || scrolled ? 1 : 0,
         }}
       />
-      <div className="relative mx-auto flex h-full max-w-[1940px] items-center justify-between md:px-7.5 lg:px-[60px]">
+      <div className="relative mx-auto flex h-full max-w-[1940px] items-center justify-between md:px-7.5 lg:px-[clamp(32px,3.16vw,60px)]">
         <Link href="/" aria-label="Tidey home" className="shrink-0">
           <Image
             src="/assets/illustrations/tidey-logo-white.svg"
