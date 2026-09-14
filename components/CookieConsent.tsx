@@ -63,10 +63,10 @@ export default function CookieConsent() {
         leaving ? "translate-y-4 opacity-0" : "translate-y-0 opacity-100"
       }`}
     >
-      <h2 className="text-[18px] font-bold leading-[130%] text-[#232323]">
+      <h2 className="text-[16px] lg:text-[18px] font-bold leading-[130%] text-[#232323]">
         We value your privacy
       </h2>
-      <p className="mt-2 text-[14px] font-normal leading-[160%] text-[#878787]">
+      <p className="mt-2 text-[12px] lg:text-[14px] font-normal leading-[160%] text-[#878787]">
         We use essential cookies to make Tidey work. Optional features will
         always be your choice, and we never sell or share personal information.
         Details in our{" "}
@@ -82,14 +82,14 @@ export default function CookieConsent() {
         <button
           type="button"
           onClick={() => decide("accepted")}
-          className="h-[52px] w-full flex-1 cursor-pointer rounded-full bg-[linear-gradient(180deg,#0088FA_0%,#00CCFA_100%)] px-6 text-[16px] font-semibold text-white shadow-[inset_0px_0px_20px_#FFFFFF] transition hover:brightness-105 active:scale-[0.98]"
+          className="h-[30px] w-full lg:h-[52px] lg:flex-1 cursor-pointer rounded-full bg-[linear-gradient(180deg,#0088FA_0%,#00CCFA_100%)] px-6 text-[14px] lg:text-[16px] font-semibold text-white shadow-[inset_0px_0px_20px_#FFFFFF] transition hover:brightness-105 active:scale-[0.98]"
         >
           Accept
         </button>
         <button
           type="button"
           onClick={() => decide("rejected")}
-          className="h-[52px] w-full flex-1 cursor-pointer rounded-full border border-[#D9EFFD] bg-white px-6 text-[16px] font-semibold text-[#232323] transition hover:border-[#00BAFA] active:scale-[0.98]"
+          className="h-[30px] w-full lg:h-[52px] lg:flex-1 cursor-pointer rounded-full border border-[#D9EFFD] bg-white px-6 text-[14px] lg:text-[16px] font-semibold text-[#232323] transition hover:border-[#00BAFA] active:scale-[0.98]"
         >
           Reject non-essential
         </button>
