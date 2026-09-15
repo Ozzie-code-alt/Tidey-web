@@ -1,6 +1,7 @@
 /node_modules
 /.next
 /out
+*.tsbuildinfo
 /build
 .DS_Store
 *.pem
