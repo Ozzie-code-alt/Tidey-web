@@ -59,7 +59,7 @@ export default function CookieConsent() {
     <div
       role="region"
       aria-label="Cookie consent"
-      className={`fixed bottom-5 left-5 z-[70] w-[min(360px,calc(100vw-40px))] rounded-[26px] bg-white p-6 shadow-[0_24px_60px_rgba(0,70,128,0.22)] lg:min-w-[500px] transition-all duration-300 lg:rounded-[40px] ${
+      className={`fixed bottom-5 right-5 z-[70] w-[min(360px,calc(100vw-40px))] rounded-[26px] bg-white p-6 shadow-[0_24px_60px_rgba(0,70,128,0.22)] lg:min-w-[500px] transition-all duration-300 lg:rounded-[40px] ${
         leaving ? "translate-y-4 opacity-0" : "translate-y-0 opacity-100"
       }`}
     >
