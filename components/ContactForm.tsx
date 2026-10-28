@@ -163,9 +163,11 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={status === "sending"}
-        className="h-[63px] self-start rounded-full bg-[linear-gradient(180deg,#0088FA_0%,#00CCFA_100%)] px-[46px] text-[18px] font-semibold text-white transition hover:brightness-105 active:scale-[0.98] disabled:cursor-not-allowed disabled:opacity-60"
+        className="inline-flex w-full items-center justify-center gap-[14px] rounded-[60px] bg-[#0088FA] px-8 py-5 text-white shadow-[inset_0px_0px_20px_#FFFFFF] transition hover:brightness-105 active:scale-[0.97] disabled:cursor-not-allowed disabled:opacity-60 md:min-w-79 lg:w-auto lg:px-[clamp(25px,2.42vw,46px)] lg:py-[clamp(14px,1.37vw,26px)]"
       >
-        {status === "sending" ? "Sending…" : "Send message"}
+        <span className="text-center text-[18px] font-semibold leading-none lg:text-[clamp(16px,calc(0.57vw+9.14px),20px)]">
+          {status === "sending" ? "Sending…" : "Send message"}
+        </span>
       </button>
     </form>
   );
