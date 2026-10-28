@@ -15,7 +15,7 @@ export default function Header() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
-  const forceFade = pathname === "/privacy" || pathname === "/terms";
+  const forceFade = pathname === "/privacy" || pathname === "/terms" || pathname === "/delete";
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);

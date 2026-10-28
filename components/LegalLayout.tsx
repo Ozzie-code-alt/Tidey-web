@@ -6,10 +6,12 @@
 export default function LegalLayout({
   title,
   updated,
+  eyebrow = "Legal",
   children,
 }: {
   title: string;
   updated: string;
+  eyebrow?: string;
   children: React.ReactNode;
 }) {
   return (
@@ -31,7 +33,7 @@ export default function LegalLayout({
 
       <main className="legal">
         <article className="legal-inner">
-          <span className="legal-eyebrow">Legal</span>
+          <span className="legal-eyebrow">{eyebrow}</span>
           <h1 className="legal-title">{title}</h1>
           <p className="legal-updated">Last updated: {updated}</p>
           {children}
