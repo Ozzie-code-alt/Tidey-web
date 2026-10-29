@@ -315,11 +315,11 @@ h1.hero-title .nudge{color:#FFE27A}
 .legal-step-num{flex:none;display:flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:50%;background:var(--blue-500);color:#fff;font-weight:800;font-size:14px}
 .legal-step-title{font-weight:800;font-size:16px;color:var(--ink-900)}
 .legal-step p{margin:0}
-.legal-step-shot{position:relative;display:flex;align-items:center;justify-content:center;aspect-ratio:9/16;max-height:360px;border:2px dashed var(--blue-200);border-radius:18px;background:#fff;color:var(--ink-400);font-weight:700;font-size:13px}
+.legal-step-shot{position:relative;display:flex;align-items:center;justify-content:center;width:clamp(140px,40vw,165px);aspect-ratio:440/956;justify-self:center;border:2px dashed var(--blue-200);border-radius:18px;background:#fff;color:var(--ink-400);font-weight:700;font-size:13px}
 .legal-step-shot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:16px}
 @media (min-width:768px){
-  .legal-step{grid-template-columns:minmax(0,1fr) 210px;align-items:center;padding:24px}
-  .legal-step-shot{max-height:none}
+  .legal-step{grid-template-columns:minmax(0,1fr) auto;align-items:center;padding:24px}
+  .legal-step-shot{width:clamp(140px,11.5vw,190px);justify-self:end}
 }
 .legal-inner ul li strong{color:var(--ink-900);font-weight:800}
 .legal-inner a{color:var(--text-link);font-weight:700;text-decoration:none;border-bottom:1px solid var(--blue-200);transition:border-color var(--dur) var(--ease-out)}

@@ -15,8 +15,8 @@ const STEP_IMAGES: (string | null)[] = [
   "/assets/delete-profile/dashboard.png",
   "/assets/delete-profile/settings.png",
   "/assets/delete-profile/delete-account.png",
-  "/assets/delete-profile/delete-account-pin.png",
-  "/assets/delete-profile/delete-account-pin-submit.png",
+  "/assets/delete-profile/parent-pin.png",
+  "/assets/delete-profile/parent-pin-submit.png",
 ];
 
 const steps = [
@@ -133,8 +133,8 @@ export default function DeleteAccountPage() {
       <ul>
         <li>
           Deletion is permanent. Once confirmed, your account can&apos;t be
-          restored, and Tidey Coins, streaks, and vaults can&apos;t be
-          recovered.
+          restored — and every profile, chore, reward, coin balance, and
+          history in your household is deleted for good.
         </li>
         <li>
           Child profiles linked to your parent account are deleted along with
