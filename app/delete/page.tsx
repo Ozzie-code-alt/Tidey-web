@@ -8,17 +8,15 @@ export const metadata: Metadata = {
     "How to delete your Tidey account and remove your family's data from the app — in-app or by email.",
 };
 
-// Drop real screenshots in public/assets/account-deletion/ as
-// step-1.png … step-7.png (phone screenshots, 9:16) and list the paths
-// here in step order. `null` keeps the labelled placeholder.
+// Screenshots in public/assets/delete-profile/, listed in step order.
+// `null` keeps the labelled placeholder.
 const STEP_IMAGES: (string | null)[] = [
-  null,
-  null,
-  null,
-  null,
-  null,
-  null,
-  null,
+  "/assets/delete-profile/onboarding-screen.png",
+  "/assets/delete-profile/dashboard.png",
+  "/assets/delete-profile/settings.png",
+  "/assets/delete-profile/delete-account.png",
+  "/assets/delete-profile/delete-account-pin.png",
+  "/assets/delete-profile/delete-account-pin-submit.png",
 ];
 
 const steps = [
@@ -31,24 +29,20 @@ const steps = [
     body: "The settings gear sits at the bottom of the Tidey home screen. Tap it to open your settings.",
   },
   {
-    title: "Tap your avatar or open your profile",
-    body: "Your avatar sits at the very top of the settings page — tap it to open your profile.",
+    title: "Tap “Delete Account” at the bottom of the screen",
+    body: "The Delete Account button sits at the very bottom of the settings screen. Nothing is removed yet — a confirmation appears first.",
   },
   {
-    title: "Tap “Delete account” at the bottom of the page",
-    body: "Scroll to the bottom of the account page and tap “Delete account”. Nothing is removed yet — the process only completes after you confirm below.",
+    title: "Read the “Delete account?” confirmation, then tap “Continue”",
+    body: "The modal spells out exactly what goes: your entire household — every profile, chore, reward, coin balance, and history. It can't be undone. An active subscription must be cancelled separately in your device's subscription settings. Tap Continue when you're sure.",
   },
   {
-    title: "Review the summary",
-    body: "We show exactly what will be deleted: Tidey Coins, streaks, your pet, savings vaults, chores, and reward history. This step can still be cancelled.",
+    title: "Enter your parent PIN",
+    body: "To make sure the deletion is intentional, Tidey asks you to verify with your parent PIN before anything is removed.",
   },
   {
-    title: "Confirm by email",
-    body: "We send a verification link to your registered email address. Tap it within 24 hours — if the link expires, nothing is deleted and your account stays as it was.",
-  },
-  {
-    title: "Tap “Delete permanently”",
-    body: "After the final confirmation, your profile and your family's data are queued for deletion within 30 days and you're signed out immediately.",
+    title: "Your account is deleted",
+    body: "Once the correct parent PIN is entered, Tidey handles the rest. You're signed out immediately, and your profile and your family's data are permanently removed within 30 days.",
   },
 ];
 
@@ -85,7 +79,7 @@ export default function DeleteAccountPage() {
   return (
     <LegalLayout
       title="Delete Your Account"
-      updated="September 14, 2026"
+      updated="October 28, 2026"
       eyebrow="Account"
     >
       <p className="legal-lead">
@@ -139,7 +133,7 @@ export default function DeleteAccountPage() {
       <ul>
         <li>
           Deletion is permanent. Once confirmed, your account can&apos;t be
-          restored, and Tidey Coins, streaks, pets, and vaults can&apos;t be
+          restored, and Tidey Coins, streaks, and vaults can&apos;t be
           recovered.
         </li>
         <li>
