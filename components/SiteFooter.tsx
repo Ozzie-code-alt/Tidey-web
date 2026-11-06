@@ -12,6 +12,13 @@ const navColumn = {
   ] as FooterLink[],
 };
 
+const contactColumn = {
+  title: "Contact",
+  links: [
+    { label: "Support", href: "/support" },
+  ] as FooterLink[],
+};
+
 const followColumn = {
   title: "Follow us",
   links: [
@@ -20,7 +27,7 @@ const followColumn = {
   ] as FooterLink[],
 };
 
-const columns = [navColumn, followColumn];
+const columns = [navColumn, contactColumn, followColumn];
 
 export default function SiteFooter() {
   return (

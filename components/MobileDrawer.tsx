@@ -54,11 +54,11 @@ export default function MobileDrawer({ open, onClose, links }: MobileDrawerProps
         ))}
 
         <a
-          href="mailto:hello@tidey.app"
+          href="mailto:hello@gettidey.com"
           onClick={onClose}
           className="mt-4 rounded-full bg-brand px-6 py-3 text-center font-extrabold text-white transition hover:bg-brand-hover"
         >
-          hello@tidey.app
+          hello@gettidey.com
         </a>
       </aside>
     </div>

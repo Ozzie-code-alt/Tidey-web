@@ -113,7 +113,7 @@ export default function DeleteAccountPage() {
       <ul>
         <li>
           Send your request to{" "}
-          <a href="mailto:hello@tidey.app">hello@tidey.app</a> from the email
+          <a href="mailto:hello@gettidey.com">hello@gettidey.com</a> from the email
           address registered with Tidey
         </li>
         <li>Use the subject line “Account Deletion Request”</li>
@@ -157,8 +157,8 @@ export default function DeleteAccountPage() {
       <p>
         If something isn&apos;t working the way you expect, we&apos;d like the
         chance to help before you go — reach us at{" "}
-        <a href="mailto:hello@tidey.app">hello@tidey.app</a> or through our{" "}
-        <a href="/contact">contact page</a>. Either way, the deletion options
+        <a href="mailto:hello@gettidey.com">hello@gettidey.com</a> or through our{" "}
+        <a href="/support">contact page</a>. Either way, the deletion options
         above always remain available.
       </p>
     </LegalLayout>
