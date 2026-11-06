@@ -9,7 +9,7 @@ type StoreButtonProps = {
 };
 
 export function StoreButton({
-  href = "/contact",
+  href = "/support",
   platform,
   label,
   className = "",

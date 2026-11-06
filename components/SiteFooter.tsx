@@ -9,15 +9,13 @@ const navColumn = {
     { label: "Home", href: "/" },
     { label: "Privacy Policy", href: "/privacy" },
     { label: "Terms of Service", href: "/terms" },
-    { label: "Subscriptions", href: "#" },
   ] as FooterLink[],
 };
 
 const contactColumn = {
   title: "Contact",
   links: [
-    { label: "Help center", href: "/contact" },
-    { label: "Support", href: "/contact" },
+    { label: "Support", href: "/support" },
   ] as FooterLink[],
 };
 

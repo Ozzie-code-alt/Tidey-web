@@ -5,6 +5,8 @@ import { useState } from "react";
 type Fields = { name: string; email: string; message: string };
 type Errors = Partial<Record<keyof Fields, string>>;
 
+const CONTACT_EMAIL = "hello@gettidey.com";
+
 const empty: Fields = { name: "", email: "", message: "" };
 
 type FieldProps = {
@@ -76,7 +78,7 @@ function Field({
 export default function ContactForm() {
   const [fields, setFields] = useState<Fields>(empty);
   const [errors, setErrors] = useState<Errors>({});
-  const [status, setStatus] = useState<"idle" | "sending" | "sent">("idle");
+  const [status, setStatus] = useState<"idle" | "sent">("idle");
 
   function update(key: keyof Fields, value: string) {
     setFields((prev) => ({ ...prev, [key]: value }));
@@ -97,33 +99,51 @@ export default function ContactForm() {
     return next;
   }
 
-  async function handleSubmit(e: React.FormEvent) {
+  function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     const found = validate();
     setErrors(found);
     if (Object.keys(found).length > 0) return;
 
-    setStatus("sending");
-    await new Promise((resolve) => setTimeout(resolve, 900));
-    setStatus("sent");
+    const subject = `Tidey support — ${fields.name.trim()}`;
+    const body = `Name: ${fields.name.trim()}\nEmail: ${fields.email.trim()}\n\n${fields.message.trim()}`;
+    window.location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(
+      subject
+    )}&body=${encodeURIComponent(body)}`;
+
     setFields(empty);
+    setStatus("sent");
   }
 
   if (status === "sent") {
     return (
-      <div className="rounded-[26px] bg-[linear-gradient(180deg,#D5F1F8_0%,#F2FBFD_100%)] p-8 text-center shadow-[inset_0px_0px_20px_#FFFFFF] lg:rounded-[40px]">
-        <p className="text-[24px] font-bold leading-[32px] text-[#232323] lg:text-[clamp(22px,1.68vw,32px)] lg:leading-[125%]">
-          Message sent
+      <div className="flex flex-col gap-5 py-2 text-center">
+        <div>
+          <p className="text-[24px] font-bold leading-[32px] text-[#232323] lg:text-[clamp(22px,1.68vw,32px)] lg:leading-[125%]">
+            Almost there!
+          </p>
+          <p className="mx-auto mt-2 max-w-[420px] text-[16px] font-normal leading-[160%] text-[#878787] lg:text-[18px]">
+            Your email app just opened with your message pre-filled — hit send to
+            deliver it.
+          </p>
+        </div>
+
+        <p className="text-[14px] font-normal leading-[160%] text-[#878787] lg:text-[16px]">
+          Nothing opened? Email us directly at{" "}
+          <a
+            href={`mailto:${CONTACT_EMAIL}`}
+            className="font-semibold text-[#0088FA] underline underline-offset-2 transition hover:text-[#00BAFA]"
+          >
+            {CONTACT_EMAIL}
+          </a>
         </p>
-        <p className="mt-2 text-[16px] font-normal leading-[160%] text-[#878787] lg:text-[18px]">
-          We read everything and usually reply within two working days.
-        </p>
+
         <button
           type="button"
           onClick={() => setStatus("idle")}
-          className="mt-5 text-[16px] font-semibold text-[#0088FA] underline underline-offset-4 transition hover:text-[#00BAFA]"
+          className="text-[16px] font-semibold text-[#0088FA] underline underline-offset-4 transition hover:text-[#00BAFA]"
         >
-          Send another
+          Write another message
         </button>
       </div>
     );
@@ -162,11 +182,10 @@ export default function ContactForm() {
 
       <button
         type="submit"
-        disabled={status === "sending"}
-        className="inline-flex w-full items-center justify-center gap-[14px] rounded-[60px] bg-[#0088FA] px-8 py-5 text-white shadow-[inset_0px_0px_20px_#FFFFFF] transition hover:brightness-105 active:scale-[0.97] disabled:cursor-not-allowed disabled:opacity-60 md:min-w-79 lg:w-auto lg:px-[clamp(25px,2.42vw,46px)] lg:py-[clamp(14px,1.37vw,26px)]"
+        className="inline-flex w-full items-center justify-center gap-[14px] rounded-[60px] bg-[#0088FA] px-8 py-5 text-white shadow-[inset_0px_0px_20px_#FFFFFF] transition hover:brightness-105 active:scale-[0.97] md:min-w-79 lg:w-auto lg:px-[clamp(25px,2.42vw,46px)] lg:py-[clamp(14px,1.37vw,26px)]"
       >
         <span className="text-center text-[18px] font-semibold leading-none lg:text-[clamp(16px,calc(0.57vw+9.14px),20px)]">
-          {status === "sending" ? "Sending…" : "Send message"}
+          Send message
         </span>
       </button>
     </form>

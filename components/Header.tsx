@@ -6,16 +6,17 @@ import { usePathname } from "next/navigation";
 import Image from "next/image";
 import MobileDrawer from "./MobileDrawer";
 
-const links = [
-  { href: "/", label: "Home" },
-  { href: "/about", label: "About" }
-];
+const links = [{ href: "/", label: "Home" }];
 
 export default function Header() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
-  const forceFade = pathname === "/privacy" || pathname === "/terms" || pathname === "/delete";
+  const forceFade =
+    pathname === "/privacy" ||
+    pathname === "/terms" ||
+    pathname === "/delete" ||
+    pathname === "/support";
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
