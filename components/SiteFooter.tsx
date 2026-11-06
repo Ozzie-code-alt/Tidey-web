@@ -9,15 +9,6 @@ const navColumn = {
     { label: "Home", href: "/" },
     { label: "Privacy Policy", href: "/privacy" },
     { label: "Terms of Service", href: "/terms" },
-    { label: "Subscriptions", href: "#" },
-  ] as FooterLink[],
-};
-
-const contactColumn = {
-  title: "Contact",
-  links: [
-    { label: "Help center", href: "/contact" },
-    { label: "Support", href: "/contact" },
   ] as FooterLink[],
 };
 
@@ -29,7 +20,7 @@ const followColumn = {
   ] as FooterLink[],
 };
 
-const columns = [navColumn, contactColumn, followColumn];
+const columns = [navColumn, followColumn];
 
 export default function SiteFooter() {
   return (

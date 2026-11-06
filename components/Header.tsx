@@ -6,10 +6,7 @@ import { usePathname } from "next/navigation";
 import Image from "next/image";
 import MobileDrawer from "./MobileDrawer";
 
-const links = [
-  { href: "/", label: "Home" },
-  { href: "/about", label: "About" }
-];
+const links = [{ href: "/", label: "Home" }];
 
 export default function Header() {
   const [open, setOpen] = useState(false);
